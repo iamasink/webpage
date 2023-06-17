@@ -1,11 +1,12 @@
 import Image from "next/image";
 import SocialLink from "../components/SocialLink";
+import SocialLinkSmall from "../components/SocialLinkSmall";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-10 pt-24">
+		<main className="flex min-h-screen  flex-col items-center justify-between p-1 pt-24">
 			<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
-				<div className="flex items-center text-center ">
+				<div className="p-x-10 flex items-center text-center">
 					<Image
 						src="/pfp.jpg"
 						alt="image"
@@ -21,7 +22,7 @@ export default function Home() {
 					></Image>
 					<div className="group flex">
 						<h1
-							className={`m-0 max-w-[30ch] text-base md:text-base lg:text-5xl`}
+							className={`m-0 max-w-[30ch] text-5xl`}
 							style={{ letterSpacing: 1.5, zIndex: "1" }}
 						>
 							iamasink
@@ -43,19 +44,33 @@ export default function Home() {
 					</div>
 				</div>
 
-				<SocialLink
-					href="https://twitter.com/iamasink"
-					src="/twitter.svg"
-					alt="twitter logo"
-					text="Twitter"
-				/>
+				<div>
+					<SocialLink
+						href="https://github.com/iamasink"
+						src="/github.svg"
+						alt="GitHub"
+						text="GitHub"
+					/>
+				</div>
+				<div className="grid grid-cols-3">
+					<SocialLinkSmall
+						href="https://twitter.com/iamasink"
+						src="/twitter.svg"
+						alt="Twitter"
+					/>
 
-				<SocialLink
-					href="https://steamcommunity.com/id/iamasink/"
-					src="/steam.svg"
-					alt="steam logo"
-					text="Steam"
-				/>
+					<SocialLinkSmall
+						href="https://steamcommunity.com/id/iamasink/"
+						src="/steam.svg"
+						alt="Steam"
+					/>
+
+					<SocialLinkSmall
+						href="https://iamas.ink/discord"
+						src="/discord.svg"
+						alt="Discord Server"
+					/>
+				</div>
 			</div>
 		</main>
 	);
