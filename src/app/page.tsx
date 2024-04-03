@@ -1,20 +1,17 @@
 import Image from "next/image";
-import SocialLink from "../components/SocialLink";
-import SocialLinkSmall from "../components/SocialLinkSmall";
+import SocialLink from "@/components/SocialLink";
+import SocialLinkSmall from "@/components/SocialLinkSmall";
 import Head from "next/head";
+import IamasinkTitle from "@/components/IamasinkTitle";
 
 export default function Home() {
 	return (
 		<div>
 			<Head>
-				<title>Iamasink</title>
-				<meta
-					name="description"
-					content="iamasink's homepage"
-					key="desc"
-				/>
-				<meta property="og:title" content="Iamasink" />
-				<meta property="og:description" content="iamasink" />
+				<title>iamasink</title>
+				<meta name="description" content="iamasink's homepage" />
+				<meta property="og:title" content="iamasink" />
+				<meta property="og:description" content="iamasink's homepage" />
 				{/* <meta
 					property="og:image"
 					content="https://example.com/images/cool-page.jpg"
@@ -22,7 +19,7 @@ export default function Home() {
 			</Head>
 			<main className="flex min-h-screen  flex-col items-center justify-between p-1 pt-24">
 				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
-					<div className="items-top p-x-10 flex text-center">
+					<div className="items-top p-x-10 flex text-left text-lg">
 						<Image
 							src="/pfp.png"
 							alt="image"
@@ -36,13 +33,8 @@ export default function Home() {
 							className="m-4"
 							// sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						></Image>
-						<div className="group">
-							<h1
-								className={`animate-fade-gradient-right m-0 max-w-[30ch] bg-gradient-to-r from-white to-pink-700 bg-[length:400px_200px] bg-clip-text pt-9 text-5xl text-transparent transition-all `}
-								style={{}}
-							>
-								iamasink
-							</h1>
+						<div className="">
+							<IamasinkTitle></IamasinkTitle>
 							<p className="m-0 pt-9 text-2xl ">
 								{/* <span>Lily</span>{" "} */}
 								<span className="text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100">
@@ -54,13 +46,9 @@ export default function Home() {
 									she/her
 								</span>
 							</p>
-						</div>
-					</div>
-					<div className="flex flex-col justify-center">
-						<h1 className={`max-w-[30ch] text-center text-xl`}>
 							Discord @
 							<span className="select-text">iamasink</span>
-						</h1>
+						</div>
 					</div>
 
 					<div>

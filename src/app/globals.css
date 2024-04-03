@@ -3,28 +3,68 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 100, 0, 50;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 0, 0, 0;
+	--background-end-rgb: 100, 0, 50;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
+::-moz-selection {
+	background: #f9beca;
+	color: #1a0052;
+}
+::-webkit-selection {
+	background: #f9beca;
+	color: #1a0052;
+}
+::selection {
+	background: #f9beca;
+	color: #1a0052;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 100, 0, 50;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 100, 0, 50;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
+}
+
+.animated-background {
+	background-size: 150%;
+
+	-webkit-animation: animatedbackgroundanim 15s ease infinite;
+	-moz-animation: animatedbackgroundanim 15s ease infinite;
+	animation: animatedbackgroundanim 15s ease infinite;
+}
+
+.animated-background-fast {
+	background-size: 150%;
+
+	-webkit-animation: animatedbackgroundanim 1.5s ease infinite;
+	-moz-animation: animatedbackgroundanim 1.5s ease infinite;
+	animation: animatedbackgroundanim 1.5s ease infinite;
+}
+
+@keyframes animatedbackgroundanim {
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
 }
