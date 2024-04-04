@@ -3,6 +3,11 @@ import SocialLink from "@/components/SocialLink";
 import SocialLinkSmall from "@/components/SocialLinkSmall";
 import Head from "next/head";
 import IamasinkTitle from "@/components/IamasinkTitle";
+import Pfp from "@/components/Pfp";
+import Tooltip from "@/components/Tooltip";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import CopyableText from "@/components/CopyableText";
 
 export default function Home() {
 	return (
@@ -20,23 +25,10 @@ export default function Home() {
 			<main className="flex min-h-screen  flex-col items-center justify-between p-1 pt-24">
 				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
 					<div className="items-top p-x-10 flex text-left text-lg">
-						<Image
-							src="/pfp.png"
-							alt="image"
-							draggable={false}
-							width={200}
-							height={0}
-							style={{
-								borderRadius: "15%",
-								border: "3px solid #ffffff",
-							}}
-							className="m-4"
-							// sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-						></Image>
+						<Pfp></Pfp>
 						<div className="">
 							<IamasinkTitle></IamasinkTitle>
 							<p className="m-0 pt-9 text-2xl ">
-								{/* <span>Lily</span>{" "} */}
 								<span className="text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100">
 									&lt;3
 								</span>
@@ -46,8 +38,10 @@ export default function Home() {
 									she/her
 								</span>
 							</p>
-							Discord @
-							<span className="select-text">iamasink</span>
+							<div className="flex">
+								Discord @
+								<CopyableText text="iamasink"></CopyableText>
+							</div>
 						</div>
 					</div>
 

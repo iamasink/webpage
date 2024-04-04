@@ -16,10 +16,6 @@ export default function Home() {
 				/>
 				<meta property="og:title" content="Iamasink" />
 				<meta property="og:description" content="iamasink" />
-				{/* <meta
-					property="og:image"
-					content="https://example.com/images/cool-page.jpg"
-				/> */}
 			</Head>
 			<main className="items-left flex min-h-screen flex-col justify-between p-24">
 				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
