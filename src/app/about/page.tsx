@@ -20,7 +20,7 @@ export default function Home() {
 			<main className="items-left flex min-h-screen flex-col justify-between p-24">
 				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
 					<Header></Header>
-					<p>test</p>
+					<p>hello world</p>
 				</div>
 			</main>
 		</div>

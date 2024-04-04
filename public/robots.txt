@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+max-length: 0

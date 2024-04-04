@@ -11,15 +11,7 @@
 	user-select: none; /* Standard syntax */
 }
 
-::-moz-selection {
-	background: #f9beca;
-	color: #1a0052;
-}
-::-webkit-selection {
-	background: #f9beca;
-	color: #1a0052;
-}
-::selection {
+::-moz-selection ::-webkit-selection ::selection {
 	background: #f9beca;
 	color: #1a0052;
 }
