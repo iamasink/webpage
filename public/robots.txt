@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://iamas.ink
-
-# Sitemaps
-Sitemap: https://iamas.ink/sitemap.xml
