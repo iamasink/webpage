@@ -64,6 +64,13 @@ export default function Home() {
 							alt="Steam"
 							text="Steam"
 						/>
+						<SocialLink
+							href="https://q.iamas.ink"
+							src="/quartz.png"
+							alt="Quartz"
+							text="Quartz"
+							newtab={false}
+						/>
 					</div>
 					<div className="grid grid-cols-3">
 						{/* small ones go here */}
