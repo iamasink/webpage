@@ -22,12 +22,15 @@ export default function Home() {
 					content="https://example.com/images/cool-page.jpg"
 				/> */}
 			</Head>
-			<main className="flex min-h-screen  flex-col items-center justify-between p-1 pt-24">
+			<main className="flex min-h-screen flex-col items-center justify-between p-1 pt-24">
 				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
 					<div className="items-top p-x-10 flex text-left text-lg">
 						<Pfp></Pfp>
 						<div className="">
 							<IamasinkTitle></IamasinkTitle>
+							<p className="text-pink-100 transition-all">
+								hi i&apos;m lillie :3
+							</p>
 							<p className="m-0 pt-9 text-2xl ">
 								<span className="text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100">
 									&lt;3
@@ -47,6 +50,13 @@ export default function Home() {
 
 					<div>
 						<SocialLink
+							href="https://q.iamas.ink"
+							src="/quartz.png"
+							alt="Quartz"
+							text="Blog"
+							newtab={false}
+						/>
+						<SocialLink
 							href="https://github.com/iamasink"
 							src="/github.svg"
 							alt="GitHub"
@@ -63,13 +73,6 @@ export default function Home() {
 							src="/steam.svg"
 							alt="Steam"
 							text="Steam"
-						/>
-						<SocialLink
-							href="https://q.iamas.ink"
-							src="/quartz.png"
-							alt="Quartz"
-							text="Quartz"
-							newtab={false}
 						/>
 					</div>
 					<div className="grid grid-cols-3">
@@ -88,6 +91,11 @@ export default function Home() {
 							href="mailto:lily@yoink.org.uk"
 							src="/email.svg"
 							alt="email"
+						/>
+						<SocialLinkSmall
+							href="https://blahaj.zone/@lillie"
+							src="/fediverse.svg"
+							alt="fediverse (blahaj.zone)"
 						/>
 					</div>
 				</div>
