@@ -16,7 +16,7 @@ const Clock = () => {
     const hourFormat = new Intl.DateTimeFormat("en-GB", hourOptions);
     const hora = hourFormat.format(hour);
 
-    const getTime = (date: Date) => {
+    const GetTime = (date: Date) => { // this has to start with a capital or react gets mad 
         useEffect(() => {
             const time = setTimeout(() => {
                 setHour(date)
@@ -31,7 +31,7 @@ const Clock = () => {
     return (
         <div className="text-left">
             <p suppressHydrationWarning className="font-mono">{
-                getTime(new Date())
+                GetTime(new Date())
             }</p>
         </div>
     );
