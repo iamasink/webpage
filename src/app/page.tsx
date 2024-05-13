@@ -2,12 +2,14 @@ import Image from "next/image";
 import SocialLink from "@/components/SocialLink";
 import SocialLinkSmall from "@/components/SocialLinkSmall";
 import Head from "next/head";
-import IamasinkTitle from "@/components/IamasinkTitle";
+import NameTitle from "@/components/NameTitle";
 import Pfp from "@/components/Pfp";
 import Tooltip from "@/components/Tooltip";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import CopyableText from "@/components/CopyableText";
+import Clock from "@/components/Clock";
+import DiscordStatus from "@/components/DiscordStatus";
 
 export default function Home() {
 	return (
@@ -27,9 +29,9 @@ export default function Home() {
 					<div className="items-top p-x-10 flex text-left text-lg">
 						<Pfp></Pfp>
 						<div className="">
-							<IamasinkTitle></IamasinkTitle>
+							<NameTitle></NameTitle>
 							<p className="text-pink-100 transition-all">
-								hi i&apos;m lillie :3
+								haii :3c
 							</p>
 							<p className="m-0 pt-9 text-2xl ">
 								<span className="text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100">
@@ -45,8 +47,12 @@ export default function Home() {
 								Discord @
 								<CopyableText text="iamasink"></CopyableText>
 							</div>
+							<span>My time:
+								<Clock></Clock>
+							</span>
 						</div>
 					</div>
+					<DiscordStatus></DiscordStatus>
 
 					<div>
 						<SocialLink
@@ -99,7 +105,7 @@ export default function Home() {
 						/>
 					</div>
 				</div>
-			</main>
-		</div>
+			</main >
+		</div >
 	);
 }

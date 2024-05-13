@@ -7,10 +7,9 @@ const Pfp: React.FC = ({ }) => {
 	const alt = "pfp art by shioneko114"
 
 	return (
-		<div className="content-center">
-			<Tooltip message={alt}>
-				<a href=" https://twitter.com/shioneko114/status/1695414505151635514">
-
+		<div className="place-content-center ">
+			<a draggable="false" href=" https://twitter.com/shioneko114/status/1695414505151635514">
+				<Tooltip message={alt}>
 					<Image
 						src="/pfp.png"
 						alt={alt}
@@ -25,8 +24,8 @@ const Pfp: React.FC = ({ }) => {
 						className="m-4"
 					// sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					></Image>
-				</a>
-			</Tooltip>
+				</Tooltip>
+			</a>
 		</div>
 	);
 };

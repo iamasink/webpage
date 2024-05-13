@@ -1,17 +1,17 @@
 import Link from "next/link";
-import IamasinkTitle from "@/components/IamasinkTitle";
+import NameTitle from "@/components/NameTitle";
 import Pfp from "@/components/Pfp";
 
-interface HeaderProps {}
+interface HeaderProps { }
 
-const Header: React.FC<HeaderProps> = ({}) => {
+const Header: React.FC<HeaderProps> = ({ }) => {
 	return (
 		<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
 			<div className="items-top p-x-10 flex text-left">
 				<Pfp></Pfp>
 				<div className="">
 					<Link href="/">
-						<IamasinkTitle></IamasinkTitle>
+						<NameTitle></NameTitle>
 					</Link>
 					<p className="m-0 pt-9 text-2xl ">
 						<span className="text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100">
