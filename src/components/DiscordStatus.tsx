@@ -1,5 +1,8 @@
 "use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const url = "https:///lanyard-profile-readme-rho.vercel.app//api/303267459824353280?showDisplayName=true&hideActivity=whenNotUsed&showDisplayName=true&theme=dark&bg=809ecf00&hideProfile=true&hideTimestamp=true&"
 
 const DiscordStatus: React.FC = ({ }) => {
 
@@ -10,13 +13,23 @@ const DiscordStatus: React.FC = ({ }) => {
     }
     if (typeof window !== 'undefined') {
         // client-side-only code
+
         setInterval(() => {
-            reloadImg(`https://lanyard.cnrad.dev/api/303267459824353280?showDisplayName=true&hideActivity=whenNotUsed&showDisplayName=true&theme=dark&bg=bg=809ecf00&hideProfile=true&hideTimestamp=false&${Date.now()}`)
-            // console.log("Hello, world!")
+            // reloadImg(`https://https://lanyard.cnrad.dev/api/303267459824353280?showDisplayName=true&hideActivity=whenNotUsed&showDisplayName=true&theme=dark&bg=bg=809ecf00&hideProfile=true&hideTimestamp=false&${Date.now()}`)
+            console.log("Hello, world!")
+            reloadImg(`${url + Date.now()}`)
         }, 15 * 1000)
     }
     return (
-        <img id="discordstatus" draggable="false" src={`https://lanyard.cnrad.dev/api/303267459824353280?showDisplayName=true&hideActivity=whenNotUsed&showDisplayName=true&theme=dark&bg=bg=809ecf00&hideProfile=true&hideTimestamp=false&${Date.now()}`} alt="Discord Presence" ></img>
+        <motion.div
+            initial={{ y: 0, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeInOut", duration: 3 }}
+        >
+            <div className="h-[130px] w-[410px]">
+                <img suppressHydrationWarning id="discordstatus" draggable="false" src={url} alt="Discord Presence" ></img>
+            </div>
+        </motion.div>
     );
 };
 
