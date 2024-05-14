@@ -7,7 +7,7 @@ const Clock = () => {
     const [hour, setHour] = useState<Date>(new Date());
 
     const hourOptions: Intl.DateTimeFormatOptions = {
-        hour: "numeric",
+        hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
         timeZone: "Europe/London"
