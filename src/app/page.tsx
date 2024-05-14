@@ -26,7 +26,7 @@ export default function Home() {
 			</Head>
 			<main className="flex min-h-screen flex-col items-center justify-between p-1 pt-24">
 				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
-					<div className="items-top p-x-10 flex text-left text-lg">
+					<div className="items-top flex text-left text-lg">
 						<Pfp></Pfp>
 						<div className="">
 							<NameTitle></NameTitle>
@@ -47,12 +47,16 @@ export default function Home() {
 								Discord @
 								<CopyableText text="iamasink"></CopyableText>
 							</div>
-							<span>My time:
-								<Clock></Clock>
-							</span>
 						</div>
 					</div>
+
+					<div className="ml-10">
+						<p className="">My time (<span className="font-mono">Europe/London</span>):
+						</p>
+						<Clock></Clock>
+					</div>
 					<DiscordStatus></DiscordStatus>
+
 
 					<div>
 						<SocialLink
