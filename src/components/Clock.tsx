@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
 
 
 const Clock = () => {
@@ -20,7 +22,7 @@ const Clock = () => {
         useEffect(() => {
             const time = setTimeout(() => {
                 setHour(date)
-            }, 100)
+            }, 1000)
             return () => {
                 clearTimeout(time)
             }
@@ -29,11 +31,30 @@ const Clock = () => {
     };
 
     return (
-        <div className="text-left">
-            <p suppressHydrationWarning className="font-mono">{
-                GetTime(new Date())
-            }</p>
-        </div>
+        <div className="">
+            <motion.div className="absolute"
+                initial={{ y: 0, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ ease: "easeInOut", duration: 5 }}
+            >
+                <div className="text-left">
+                    <p suppressHydrationWarning className="font-mono">{
+                        GetTime(new Date())
+                    }</p>
+                </div>
+            </motion.div>
+            <motion.div className="absolute"
+                initial={{ y: 0, opacity: 0.5 }}
+                animate={{ y: 0, opacity: 0 }}
+                transition={{ ease: "easeInOut", duration: 5 }}
+            >
+                <div className="text-left">
+                    <p suppressHydrationWarning className="font-mono">00:00:00</p>
+                </div>
+            </motion.div>
+            <br></br>
+
+        </div >
     );
 };
 
