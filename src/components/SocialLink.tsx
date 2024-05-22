@@ -28,7 +28,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 			className="group m-1 flex rounded-lg border border-transparent px-5 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 lg:px-5 lg:py-5"
 			target={target}
 			rel={rel}
-			draggable={false}
 		>
 			<div className="flex h-full px-2 ">
 				<div className="flex aspect-square items-center border-gray-100 p-1 align-middle transition-transform group-hover:translate-x-3">
@@ -38,6 +37,8 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 						alt={alt}
 						height={40}
 						width={40}
+						draggable={false}
+
 					/>
 				</div>
 				<div className="flex items-center border-gray-100 pl-1 pr-4 align-middle transition-transform group-hover:translate-x-1">
