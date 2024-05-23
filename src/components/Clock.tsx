@@ -1,58 +1,55 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Transition } from "@headlessui/react";
 
 
 
 const Clock = () => {
+    const [time, setTime] = useState("");
 
-    const [hour, setHour] = useState<Date>(new Date());
+    useEffect(() => {
+        const updateTime = () => {
+            const LondonTimeFormatter = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Europe/London",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false,
+            });
+            const currentTime = LondonTimeFormatter.format(new Date());
+            setTime(currentTime);
+        };
 
-    const hourOptions: Intl.DateTimeFormatOptions = {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        timeZone: "Europe/London"
-    };
+        const interval = setInterval(updateTime, 1000);
+        updateTime(); // to set the initial time immediately
 
-    const hourFormat = new Intl.DateTimeFormat("en-GB", hourOptions);
-    const hora = hourFormat.format(hour);
-
-    const GetTime = (date: Date) => { // this has to start with a capital or react gets mad 
-        useEffect(() => {
-            const time = setTimeout(() => {
-                setHour(date)
-            }, 1000)
-            return () => {
-                clearTimeout(time)
-            }
-        }, [hour])
-        return hora
-    };
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="">
-            <motion.div className="absolute"
+            {/* <motion.div className="absolute"
                 initial={{ y: 0, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ease: "easeInOut", duration: 5 }}
+            > */}
+            <Transition
+                show={time != ""}
+                enter="ease-out duration-200"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
             >
                 <div className="text-left">
-                    <p suppressHydrationWarning className="font-mono">{
-                        GetTime(new Date())
-                    }</p>
+                    <p suppressHydrationWarning className="font-mono">
+                        {time}
+                    </p>
                 </div>
-            </motion.div>
-            <motion.div className="absolute"
-                initial={{ y: 0, opacity: 0.5 }}
-                animate={{ y: 0, opacity: 0 }}
-                transition={{ ease: "easeInOut", duration: 5 }}
-            >
-                <div className="text-left">
-                    <p suppressHydrationWarning className="font-mono">00:00:00</p>
-                </div>
-            </motion.div>
-            <br></br>
+            </Transition>
+            {/* </motion.div> */}
 
         </div >
     );
