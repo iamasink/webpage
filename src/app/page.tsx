@@ -71,18 +71,21 @@ export default function Home() {
 							src="/github.svg"
 							alt="GitHub"
 							text="GitHub"
+							newtab={true}
 						/>{" "}
 						<SocialLink
 							href="https://discord.gg/xzZHfMw887"
 							src="/discord.svg"
 							alt="Discord"
 							text="Discord"
+							newtab={true}
 						/>
 						<SocialLink
 							href="https://steamcommunity.com/id/iamasink/"
 							src="/steam.svg"
 							alt="Steam"
 							text="Steam"
+							newtab={true}
 						/>
 					</div>
 					<div className="grid grid-cols-3">
@@ -91,21 +94,19 @@ export default function Home() {
 							href="https://ko-fi.com/iamasink"
 							src="/kofi.svg"
 							alt="Ko-fi"
+							newtab={true}
 						/>
 						<SocialLinkSmall
 							href="https://youtube.com/@iamasink"
 							src="/youtube.svg"
 							alt="youtube"
+							newtab={true}
 						/>
 						<SocialLinkSmall
-							href="mailto:lily@yoink.org.uk"
+							href="mailto:lily@iamas.ink"
 							src="/email.svg"
 							alt="email"
-						/>
-						<SocialLinkSmall
-							href="https://blahaj.zone/@lillie"
-							src="/fediverse.svg"
-							alt="fediverse (blahaj.zone)"
+							newtab={true}
 						/>
 					</div>
 				</div>
