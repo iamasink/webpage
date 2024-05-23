@@ -1,18 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface SocialLinkProps {
 	href: string;
 	src: string;
 	alt: string;
+	newtab?: boolean;
 }
 
-const SocialLinkSmall: React.FC<SocialLinkProps> = ({ href, src, alt }) => {
+let target = "";
+let rel = "noopener noreferrer";
+
+const SocialLinkSmall: React.FC<SocialLinkProps> = ({ href, src, alt, newtab = false }) => {
+	if (newtab) {
+		target = "_blank";
+		rel = "noopener noreferrer";
+	}
 	return (
-		<a
+		<Link
 			href={href}
 			className="group m-1 flex items-center justify-center rounded-lg border border-transparent px-4 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 lg:px-5 lg:py-5"
-			target="_blank"
-			rel="noopener noreferrer"
+			target={target}
+			rel={rel}
 		>
 			<div className="flex aspect-square border-gray-100 p-1 transition-transform group-hover:-translate-y-1">
 				<Image
@@ -25,7 +34,7 @@ const SocialLinkSmall: React.FC<SocialLinkProps> = ({ href, src, alt }) => {
 
 				/>
 			</div>
-		</a>
+		</Link>
 	);
 };
 
