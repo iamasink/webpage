@@ -39,7 +39,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 						height={40}
 						width={40}
 						draggable={false}
-
 					/>
 				</div>
 				<div className="flex items-center border-gray-100 pl-1 pr-4 align-middle transition-transform group-hover:translate-x-1">
