@@ -1,1 +1,2 @@
-hi this is my super wip site that really sucks and i dont know what im doing but its next.js and stuff <3
+This is (forever) wip site  
+It was originally a nextjs example project that slowly changed into what it is today, and my first time using Next
