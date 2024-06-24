@@ -1,15 +1,15 @@
-import Image from "next/image";
-import SocialLink from "@/components/SocialLink";
-import SocialLinkSmall from "@/components/SocialLinkSmall";
-import Head from "next/head";
-import NameTitle from "@/components/NameTitle";
-import Pfp from "@/components/Pfp";
-import Tooltip from "@/components/Tooltip";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import CopyableText from "@/components/CopyableText";
-import Clock from "@/components/Clock";
-import DiscordStatus from "@/components/DiscordStatus";
+import Image from "next/image"
+import SocialLink from "@/components/SocialLink"
+import SocialLinkSmall from "@/components/SocialLinkSmall"
+import Head from "next/head"
+import NameTitle from "@/components/NameTitle"
+import Pfp from "@/components/Pfp"
+import Tooltip from "@/components/Tooltip"
+import { useRouter } from "next/router"
+import { useState } from "react"
+import CopyableText from "@/components/CopyableText"
+import Clock from "@/components/Clock"
+import DiscordStatus from "@/components/DiscordStatus"
 
 export default function Home() {
 	return (
@@ -25,7 +25,7 @@ export default function Home() {
 				/> */}
 			</Head>
 			<main className="flex min-h-screen flex-col items-center justify-between p-1 pt-24">
-				<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
+				<div className="mb-32 grid lg:mb-0 text-left">
 					<div className="items-top flex text-left text-lg">
 						<Pfp></Pfp>
 						<div className="">
@@ -51,8 +51,7 @@ export default function Home() {
 					</div>
 
 					<div className="ml-10">
-						<p className="">My time (<span className="font-mono">Europe/London</span>):
-						</p>
+						<p className="">My time (<span className="font-mono">Europe/London</span>):						</p>
 						<Clock></Clock>
 					</div>
 					<DiscordStatus></DiscordStatus>
@@ -112,5 +111,5 @@ export default function Home() {
 				</div>
 			</main >
 		</div >
-	);
+	)
 }
