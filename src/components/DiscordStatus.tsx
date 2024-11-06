@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import { motion } from "framer-motion";
+"use client"
+import Link from "next/link"
+import { motion } from "framer-motion"
 
-const url = "https:///lanyard-profile-readme-rho.vercel.app/api/303267459824353280?showDisplayName=true&hideActivity=whenNotUsed&showDisplayName=true&theme=dark&bg=809ecf00&hideProfile=true&hideTimestamp=true&"
+const url = "https://lanyard.cnrad.dev/api/303267459824353280?showDisplayName=true&hideActivity=whenNotUsed&showDisplayName=true&theme=dark&bg=809ecf00&hideProfile=true&hideTimestamp=true&"
 
 const DiscordStatus: React.FC = ({ }) => {
     async function reloadImg(url: string) {
@@ -29,7 +29,7 @@ const DiscordStatus: React.FC = ({ }) => {
                 <img suppressHydrationWarning id="discordstatus" draggable="false" src={url} alt="Discord Presence" ></img>
             </div>
         </motion.div>
-    );
-};
+    )
+}
 
-export default DiscordStatus;
+export default DiscordStatus
