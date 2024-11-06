@@ -1,6 +1,6 @@
-import Link from "next/link";
-import NameTitle from "@/components/NameTitle";
-import Pfp from "@/components/Pfp";
+import Link from "next/link"
+import NameTitle from "@/components/NameTitle"
+import Pfp from "@/components/Pfp"
 
 interface HeaderProps { }
 
@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ }) => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header
