@@ -6,37 +6,49 @@ const getMarkdownFiles = (dir) => {
     return files.filter(file => file.endsWith('.md')).map(file => path.join(dir, file));
 };
 
-const addDateToFrontmatter = (file, date) => {
-    const content = fs.readFileSync(file, 'utf8');
-
+const getDateFromFrontmatter = (content) => {
     // find the frontmatter
     const frontmatterMatch = content.match(/^---\n([\s\S]+?)\n---/);
-
     if (frontmatterMatch) {
-        // Check if date already exists in the front matter
-        if (!frontmatterMatch[1].includes('date:')) {
-            // Prepend date if not found
-            const updatedContent = content.replace(/^---\n/, `---\ndate: ${date}\n`);
-            fs.writeFileSync(file, updatedContent, 'utf8');
-        }
-    } else {
-        // // No front matter, add it with the date
-        // const updatedContent = `---\ndate: ${date}\n---\n${content}`;
-        // fs.writeFileSync(file, updatedContent, 'utf8');
+        // Check if date already exists in the frontmatter
+        const dateMatch = frontmatterMatch[1].match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
+        return dateMatch ? dateMatch[1] : null;
     }
+    return null;
 };
 
-// Main function
+const sanitizeFilename = (filename) => {
+    return filename
+        .toLowerCase()
+        .replace(/\s+/g, '-')       // Replace spaces with hyphens
+        .replace(/[^\w-]/g, '');    // Remove non-alphanumeric characters except hyphens
+};
+
 const main = () => {
     const files = getMarkdownFiles('./content/blog');
-    const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
 
     files.forEach(file => {
-        // Extract date from filename if available
-        const filenameDate = path.basename(file).match(/^\d{4}-\d{2}-\d{2}/);
-        const date = filenameDate ? filenameDate[0] : currentDate;
+        const content = fs.readFileSync(file, 'utf8');
 
-        addDateToFrontmatter(file, date);
+        const frontmatterDate = getDateFromFrontmatter(content);
+        if (frontmatterDate) {
+            // checl if filename already contains the date
+            const filename = path.basename(file, '.md');
+            const filenameDateMatch = filename.match(/^\d{4}-\d{2}-\d{2}/);
+
+            if (!filenameDateMatch || filenameDateMatch[0] !== frontmatterDate) {
+                const sanitizedFilename = sanitizeFilename(filename.replace(/^\d{4}-\d{2}-\d{2}-/, ''));
+                const newFilename = `${frontmatterDate}-${sanitizedFilename}.md`;
+                const newFilePath = path.join(path.dirname(file), newFilename);
+
+                fs.renameSync(file, newFilePath);
+                console.log(`Renamed ${file} to ${newFilePath}`);
+            } else {
+                console.log(`Filename already contains date for ${file}`);
+            }
+        } else {
+            console.log(`No date found in front matter for ${file}`);
+        }
     });
 };
 
