@@ -13,6 +13,7 @@ const MarkdownText: React.FC<MarkdownTextProps> = async ({
 }) => {
     const content = await getMarkdownContent(text)
 
+
     // If no content is found, throw a 404 error
     if (!content) {
         notFound()  // This will trigger the default 404 page

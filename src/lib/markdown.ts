@@ -7,6 +7,7 @@ import html from 'remark-html'
 import remarkImages from 'remark-images'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkHtml from 'remark-html'
+import remarkWikilinks from 'remark-wiki-link'
 
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
@@ -44,6 +45,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             .use(remarkBreaks)
             .use(remarkGfm)
             .use(remarkFrontmatter)
+            // .use(remarkWikilinks)
             .use(remarkHtml, {})
             .process(contentWithLineBreaks)
         return processedContent.toString()

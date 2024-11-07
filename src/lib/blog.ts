@@ -46,5 +46,5 @@ export function getSortedPostsData() {
         }
     })
     // Sort posts by date
-    return allPostsData as Post[]
+    return allPostsData.sort((a, b) => ((b as any).date - (a as any).date)) as Post[]
 }

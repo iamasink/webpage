@@ -38,6 +38,7 @@ const main = () => {
         if (frontmatterDate) {
             // check if filename already contains the date
             const filenameDateMatch = filename.match(/^\d{4}-\d{2}-\d{2}/)
+            const oldfilename = filename
 
             // if the filename doesn't contain the date or the date doesn't match frontmatter
             if (!filenameDateMatch || filenameDateMatch[0] !== frontmatterDate) {
@@ -52,6 +53,9 @@ const main = () => {
                 newFilePath = path.join(path.dirname(file), newFilename)
                 console.log(`Filename already contains date, renaming ${file} to ${newFilePath}`)
             }
+
+            // TODO: check if frontmatter has title, if not set it.
+
 
 
             fs.renameSync(file, newFilePath)
