@@ -12,6 +12,10 @@ jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
     steps:
+      - name: "Echo values"
+        run: |
+          echo $VERCEL_PROJECT_ID
+          echo $VERCEL_TOKEN
       - uses: actions/checkout@v4
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
