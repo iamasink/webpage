@@ -1,0 +1,42 @@
+name: Format Titles in Markdown Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format-titles:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Specify your Node.js version if needed
+
+    - name: Install dependencies
+      run: |
+        npm install  # Install any required packages (if applicable)
+
+    - name: Run script to format titles in Markdown files
+      run: |
+        node scripts/format-markdown.js
+
+    - name: Run script to copy attachments
+      run: |
+        node scripts/copy-attachments.js
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "iamasink@users.noreply.github.com"
+        git add .
+        git diff --quiet || git commit -m "Format titles & Copy attachments"
+        git push
