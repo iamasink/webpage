@@ -20,16 +20,16 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'  # Specify your Node.js version if needed
+        node-version: '20'
 
-    - name: Install dependencies
+    - name: test
       run: |
-        npm install  # Install any required packages (if applicable)
+        ls
 
     - name: Run script to format titles in Markdown files
       run: |
