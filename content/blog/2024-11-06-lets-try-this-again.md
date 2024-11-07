@@ -15,5 +15,5 @@ Instead, I spent many hours making a bunch of stuff work with next.js. is this s
 
 
 
-oops.
+oops. goodnight
 ![[Pasted image 20241107082946.png]]
