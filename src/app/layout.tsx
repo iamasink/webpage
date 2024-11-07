@@ -1,33 +1,35 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css"
+import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next'
+const inter = Inter({ subsets: ["latin"] })
 
 //👇 Import our second font
-import { Open_Sans, Roboto_Mono } from "next/font/google";
+import { Open_Sans, Roboto_Mono } from "next/font/google"
 
 const openSans = Open_Sans({
 	subsets: ["latin"],
 	display: "swap",
 	//👇 Add variable to our object
 	variable: "--font-opensans",
-});
+})
 
 //👇 Configure the object for our second font
 const robotoMono = Roboto_Mono({
 	subsets: ["latin"],
 	display: "swap",
 	variable: "--font-roboto-mono",
-});
+})
 
 export const metadata = {
 	title: "iamasink",
 	description: "lillie's site",
-};
+}
 
 export default function RootLayout({
 	children,
 }: {
-	children: React.ReactNode;
+	children: React.ReactNode
 }) {
 	return (
 		<html lang="en">
@@ -40,6 +42,8 @@ export default function RootLayout({
 				<meta name="darkreader-lock" />
 			</head>
 			<body className={inter.className}>{children}</body>
+			<Analytics />
+			<SpeedInsights />
 		</html>
-	);
+	)
 }
