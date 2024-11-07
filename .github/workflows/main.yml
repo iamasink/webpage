@@ -1,4 +1,4 @@
-name: Format Titles in Markdown Files
+name: Format
 
 on:
   push:
