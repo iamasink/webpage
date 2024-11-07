@@ -21,6 +21,7 @@ const sanitizeFilename = (filename) => {
     return filename
         .toLowerCase()
         .replace(/\s+/g, "-")       // Replace spaces with hyphens
+        .replace(/\&/g, "and")      // replace ampersand
         .replace(/[^\w-]/g, "")    // Remove non-alphanumeric characters except hyphens
 }
 
@@ -47,7 +48,7 @@ const main = () => {
             } else {
                 // if date matches the frontmatter, just sanitize the filename
                 const sanitizedFilename = sanitizeFilename(filename)
-                newFilename = `${frontmatterDate}-${sanitizedFilename}.md`
+                newFilename = `${sanitizedFilename}.md`
                 newFilePath = path.join(path.dirname(file), newFilename)
                 console.log(`Filename already contains date, renaming ${file} to ${newFilePath}`)
             }
