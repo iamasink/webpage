@@ -1,5 +1,5 @@
 ---
-title: 
+title: de_nuke_custom2
 description: i fixed nuke :)
 aliases: 
 tags: 
@@ -8,7 +8,7 @@ date: 2024-06-15
 ---
 de_nuke_custom ported to CS2 and significantly changed
 
-
+---
 
 
 
@@ -59,7 +59,7 @@ for skybox stuff goes as such
 `prefabs/de_nuke/de_nuke_skybox02/worldnodes`
 NOT `prefabs/maps/prefabs/maps/de_nuke/de_nuke_skybox02/`
 
-![[Pasted image 20240615215020.png]]
+![[Attachments/Pasted image 20240615215020.png]]
 ???
 Error
 Failed to load file (invalid)!

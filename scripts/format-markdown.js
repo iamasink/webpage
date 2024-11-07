@@ -8,10 +8,11 @@ const getMarkdownFiles = (dir) => {
 
 const getDateFromFrontmatter = (content) => {
     // find the frontmatter
-    const frontmatterMatch = content.match(/^---\n([\s\S]+?)\n---/);
+    const frontmatterMatch = content.match(/^---[\r\n]+([\s\S]+?)[\r\n]+---/m);
     if (frontmatterMatch) {
         // Check if date already exists in the frontmatter
         const dateMatch = frontmatterMatch[1].match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
+        console.log(dateMatch)
         return dateMatch ? dateMatch[1] : null;
     }
     return null;
