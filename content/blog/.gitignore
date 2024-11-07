@@ -1,0 +1,6 @@
+/Templates
+/Private
+# ignore .obsidian, .trash, etc.
+/.*/
+# remove drafts
+/*-draft
