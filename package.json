@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3005",
-    "build": "next build",
+    "build": "node scripts/copy-attachments.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -19,6 +19,7 @@
     "eslint-config-next": "^14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "framer-motion": "11.2.2",
+    "ncp": "^2.0.0",
     "next": "^14.2.3",
     "next-sitemap": "^4.2.3",
     "postcss": "8.4.38",
@@ -28,8 +29,10 @@
     "react-dom": "^18.3.1",
     "remark": "^15.0.1",
     "remark-breaks": "^4.0.0",
+    "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
+    "remark-images": "^4.1.0",
     "sharp": "0.33.3",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.5"
