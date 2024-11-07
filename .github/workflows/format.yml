@@ -26,21 +26,13 @@ jobs:
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-
-    - name: test
-      run: |
-        ls /
-
-    - name: test2
-      run: |
-        git status
+      # with:
+      #   node-version: '20'
 
     - name: Install packages
       run: |
         npm install ncp
-        
+
     - name: Run script to format titles in Markdown files
       run: |
         node scripts/format-markdown.js
@@ -49,14 +41,5 @@ jobs:
       run: |
         node scripts/copy-attachments.js
 
-    - name: test3
-      run: |
-        git status
-
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v5
-
-
-    - name: test4
-      run: |
-        git status
