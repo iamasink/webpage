@@ -40,3 +40,7 @@ next-env.d.ts
 
 # other stuff
 public/Attachments/
+content/blog/Templates
+content/blog/Private
+# ignore .obsidian, .trash, etc.
+content/blog/.*/  
