@@ -30,7 +30,12 @@ jobs:
     - name: test
       run: |
         ls
+        ls /
 
+    - name: Install packages
+      run: |
+        npm install ncp
+        
     - name: Run script to format titles in Markdown files
       run: |
         node scripts/format-markdown.js
