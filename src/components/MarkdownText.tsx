@@ -20,7 +20,7 @@ const MarkdownText: React.FC<MarkdownTextProps> = async ({
     }
 
     return (
-        <article className="p-0 m-0 flex-auto max-w-fit" dangerouslySetInnerHTML={{ __html: content }} />
+        <article className="px-10 m-0 flex-auto max-w-fit" dangerouslySetInnerHTML={{ __html: content }} />
     )
 }
 

@@ -25,8 +25,10 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
 
     return (
         <OuterPage>
-            <div className=''>
-                <MarkdownText text={`${params.slug}`}></MarkdownText>
+            <div className='flex justify-center'>
+                <div className='border-rose-800 border-2 rounded-2xl' style={{ maxWidth: "1000px" }}>
+                    <MarkdownText text={`${params.slug}`}></MarkdownText>
+                </div>
             </div>
         </OuterPage>
     )
