@@ -8,60 +8,95 @@ const getMarkdownFiles = (dir) => {
 
 const getDateFromFrontmatter = (content) => {
     // find the frontmatter
-    const frontmatterMatch = content.match(/^---[\r\n]+([\s\S]+?)[\r\n]+---/m)
-    if (frontmatterMatch) {
-        // Check if date already exists in the frontmatter
-        const dateMatch = frontmatterMatch[1].match(/^date:\s*(\d{4}-\d{2}-\d{2})/m)
-        return dateMatch ? dateMatch[1] : null
-    }
+
     return null
 }
+
+
 
 const sanitizeFilename = (filename) => {
     return filename
         .toLowerCase()
-        .replace(/\s+/g, "-")       // Replace spaces with hyphens
-        .replace(/\&/g, "and")      // replace ampersand
-        .replace(/[^\w-]/g, "")    // Remove non-alphanumeric characters except hyphens
+        // i love regex
+        .replace(/^\d{4}[- ]\d{2}[- ]\d{2}([- ]\d{1,2})?([-_]|\s\-\s| )\s*/, '') // remove dates
+        .replace(/\s\-\s/g, "-")    // replace hyphens surrounded with spaces correctly
+        .replace(/\s+/g, "-")       // replace spaces with hyphens
+        .replace(/\&/g, "and")      // replace &
+        .replace(/@/g, "at")        // replace @
+        .replace(/#/g, "no ")       // replace #
+        .replace(/\+/g, "plus")     // replace +
+        .replace(/%/g, "percent")   // replace %
+        .replace(/["<>|?*]/g, "")   // remove bad characters
+        .replace(/[\/\\:]/g, "-")   // replace / \  : with hyphens
+        .replace(/[^\w-]/g, "")     // remove non-alphanumeric characters except hyphens
 }
 
 const main = () => {
-    const files = getMarkdownFiles('./content/blog')
+    const dir = './content/blog'
+    const files = getMarkdownFiles(dir)
 
-    files.forEach(file => {
+    // read and parse each file's date, then sort files by date
+    const fileData = files.map(file => {
+        console.log("file:", file)
         const content = fs.readFileSync(file, 'utf8')
-        const filename = path.basename(file, '.md')
-        let newFilename
-        let newFilePath
-
-        const frontmatterDate = getDateFromFrontmatter(content)
-        if (frontmatterDate) {
-            // check if filename already contains the date
-            const filenameDateMatch = filename.match(/^\d{4}-\d{2}-\d{2}/)
-            const oldfilename = filename
-
-            // if the filename doesn't contain the date or the date doesn't match frontmatter
-            if (!filenameDateMatch || filenameDateMatch[0] !== frontmatterDate) {
-                const sanitizedFilename = sanitizeFilename(filename.replace(/^\d{4}-\d{2}-\d{2}-/, ''))
-                newFilename = `${frontmatterDate}-${sanitizedFilename}.md`
-                newFilePath = path.join(path.dirname(file), newFilename)
-                console.log(`Renaming ${file} to ${newFilePath}`)
-            } else {
-                // if date matches the frontmatter, just sanitize the filename
-                const sanitizedFilename = sanitizeFilename(filename)
-                newFilename = `${sanitizedFilename}.md`
-                newFilePath = path.join(path.dirname(file), newFilename)
-                console.log(`Filename already contains date, renaming ${file} to ${newFilePath}`)
-            }
-
-            // TODO: check if frontmatter has title, if not set it.
-
-
-
-            fs.renameSync(file, newFilePath)
+        const frontmatterMatch = content.match(/^---[\r\n]+([\s\S]+?)[\r\n]+---/)
+        let frontmatterDate = ""
+        if (frontmatterMatch) {
+            // check if date already exists in the frontmatter
+            const dateMatch = frontmatterMatch[1].match(/^date:\s*(\S+)/m)
+            frontmatterDate = dateMatch ? dateMatch[1] : ""
         } else {
-            console.log(`No date found in front matter for ${file}`)
+            const stats = fs.statSync(file)
+            // const modifiedTime = stats.mtime.toISOString() // Format: "2024-11-11T19:53:08.000Z"
+            frontmatterDate = stats.mtime.toISOString()
+            const newFrontmatter = `---\ntitle: ${path.basename(file, ".md")}\ndescription: \naliases: \ntags: \ndate: ${frontmatterDate}\n---\n`
+            fs.writeFileSync(file, newFrontmatter + content)
         }
+        return { file: file, frontmatterDate, content }
+    })
+
+    // sort by date (oldest to newest)
+    fileData.sort((a, b) => new Date(a.frontmatterDate).getTime() - new Date(b.frontmatterDate).getTime())
+
+    // group files by date and rename them accordingly
+    const dateGroups = {}
+
+    fileData.forEach(({ file, frontmatterDate, content }) => {
+        const filename = path.basename(file, '.md')
+
+        // extract the date in YYYY-MM-DD format (ignores time if present)
+        const dateKey = frontmatterDate.split('T')[0]
+
+        // add the date if it doesn't exist
+        if (!dateGroups[dateKey]) {
+            dateGroups[dateKey] = []
+        }
+
+        // add file to the date group
+        dateGroups[dateKey].push({ file, filename, dateKey })
+    })
+
+    Object.values(dateGroups).forEach(group => {
+        group.forEach((item, index) => {
+            const sanitizedFilename = sanitizeFilename(item.filename.trim())
+
+            console.log(sanitizedFilename)
+            let newFilename
+
+            // if (group.length > 1) {
+            // add count 
+            const counter = String(index + 1)
+            newFilename = `${item.dateKey}-${counter}_${sanitizedFilename}.md`
+            // } else {
+            // // no count if there's only one file for the date
+            // actually, dont do that. good urls dont change or whatever.
+            // newFilename = `${item.dateKey}_${sanitizedFilename}.md`
+            // }
+
+            const newFilePath = path.join(path.dirname(item.file), newFilename)
+            console.log(`Renaming ${item.file} to ${newFilePath}`)
+            fs.renameSync(item.file, newFilePath)
+        })
     })
 }
 
