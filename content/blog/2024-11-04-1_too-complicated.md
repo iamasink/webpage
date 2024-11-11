@@ -17,7 +17,8 @@ But changing stuff is complicated, too.
 I don't write much. It's complicated.
 
 This word has lost its meaning now.
-Be specific but simple when writing about your emotions. It's easy to hide behind complicated words.
+Be specific but simple when writing about your emotions.
+I find that it's too easy to hide behind complicated words.
 
 I'm too complicated for myself...
 I wish I'd be simpler.

@@ -59,12 +59,12 @@ export default function Home() {
 							src="/bluesky.svg"
 							alt="Bluesky"
 							text="Bluesky"
-							newtab={false}
+							newtab={true}
 						/>
 						<SocialLink
-							href="https://q.iamas.ink"
-							src="/quartz.png"
-							alt="Quartz"
+							href="/blog"
+							src="/oldpfp.jpg"
+							alt=""
 							text="Blog"
 							newtab={false}
 						/>
