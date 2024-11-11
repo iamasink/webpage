@@ -21,28 +21,47 @@ export default async function Home() {
     console.log(allPosts)
 
     return (
+        // <OuterPage>
+        //     <div className='flex justify-center '>
+        //         <div className='border-rose-800 border-2 rounded-2xl bg-slate-800' style={{ minWidth: "1000px", maxWidth: "1000px" }}>
+
+
+        //             <ul>
+        //                 {allPosts.map(({ slug, title, date }) => (
+        //                     // each link:
+        //                     <li key={slug}>
+        //                         <Link href={`/blog/${slug}`}>
+        //                             <h2>{title}</h2>
+        //                         </Link>
+        //                         <p>{ }</p>
+        //                     </li>
+        //                 ))}
+        //             </ul>
+        //         </div>
+        //     </div>
+        // </OuterPage>
         <OuterPage>
-            <div className="">
-                <ul>
-                    {allPosts.map(({ slug, title, date }) => (
-                        // each link:
-                        <li key={slug}>
-                            <Link href={`/blog/${slug}`}>
-                                <h2>{title}</h2>
-                            </Link>
-                            <p>{ }</p>
-                        </li>
-                    ))}
-                </ul>
+            <div className='flex justify-center'>
+                <div className='border-rose-800 border-2 rounded-2xl bg-slate-800 ' style={{ maxWidth: "1000px" }}>
+                    <div className='p-4 '>
+                        <h1 className=" m-0 text-4xl">Blog</h1>
+                        <hr className="border-rose-800 min-w-fit" />
+
+                        <ul>
+                            {allPosts.map(({ slug, title, date }) => (
+                                // each link:
+                                <li key={slug}>
+                                    <Link href={`/blog/${slug}`}>
+                                        <h2>{title}</h2>
+                                    </Link>
+                                    <p>{ }</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </OuterPage>
-        // <div>
-        //     <ul>
-        //         {allPosts.map((post) => (
-        //             <li key={post.slug}>{post.slug}</li>
-        //         ))}
-        //     </ul>
-        // </div>
+        </OuterPage >
 
     )
 }

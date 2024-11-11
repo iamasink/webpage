@@ -99,6 +99,11 @@ article a {
   text-decoration: none;
 }
 
+article hr {
+	border-color: #9f1239;
+	border-width: 1px;
+}
+
 article a:hover {
   text-decoration: underline;
 }

@@ -4,6 +4,7 @@ import OuterPage from '@/components/OuterPage'
 import { getMarkdownContent, getAllMarkdownSlugs } from '@/lib/markdown'
 import { Metadata } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 // statically generate pages at build time
@@ -26,8 +27,11 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     return (
         <OuterPage>
             <div className='flex justify-center'>
-                <div className='border-rose-800 border-2 rounded-2xl' style={{ maxWidth: "1000px" }}>
-                    <MarkdownText text={`${params.slug}`}></MarkdownText>
+                <div className='border-rose-800 border-2 rounded-2xl bg-slate-800 ' style={{ maxWidth: "1000px" }}>
+                    <div className='pt-4 '>
+                        <Link className="px-10 m-0 text-rose-600" href="/blog">← Go Back</Link>
+                        <MarkdownText slug={`${params.slug}`}></MarkdownText>
+                    </div>
                 </div>
             </div>
         </OuterPage>
