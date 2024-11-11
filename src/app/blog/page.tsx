@@ -22,17 +22,18 @@ export default async function Home() {
 
     return (
         <OuterPage>
-            <div>
-                <div>
+            <div className="">
+                <ul>
                     {allPosts.map(({ slug, title, date }) => (
-                        <div key={slug}>
+                        // each link:
+                        <li key={slug}>
                             <Link href={`/blog/${slug}`}>
                                 <h2>{title}</h2>
                             </Link>
                             <p>{ }</p>
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </OuterPage>
         // <div>
