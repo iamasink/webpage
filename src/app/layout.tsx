@@ -41,9 +41,10 @@ export default function RootLayout({
 				<meta name="msapplication-TileColor" content="#7f0086" />
 				<meta name="darkreader-lock" />
 			</head>
-			<body className={inter.className}>{children}</body>
-			<Analytics />
-			<SpeedInsights />
+			<body className={inter.className}>{children}#
+				<Analytics />
+				<SpeedInsights />
+			</body>
 		</html>
 	)
 }
