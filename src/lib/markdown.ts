@@ -35,7 +35,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
         // fix linebraks
         const contentWithLineBreaks = updatedContent
             .split('\n')
-            .map(line => line + '') // add a japanese fullwidth space character to each line, so it doesnt get removed by html. this sucks but whatever.
+            .map(line => line + '')
             .join('\n') // Rejoin the lines with newlines
 
         // console.log(updatedContent)
@@ -56,7 +56,6 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
 }
 
 
-// Function to get all slugs (for dynamic routing)
 export function getAllMarkdownSlugs() {
     return fs.readdirSync(contentDirectory).map((filename) => filename.replace(/\.md$/, ''))
 }
