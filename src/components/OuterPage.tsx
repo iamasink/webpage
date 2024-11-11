@@ -7,13 +7,13 @@ interface OuterPageProps {
 
 const Tooltip: React.FC<OuterPageProps> = ({ children }) => {
     return (
-        <div className="min-h-screen ">
+        <div className="flex-col flex min-h-screen">
             <Header></Header>
-            <div className="">
+            <div className="flex-1">
                 {children}
             </div>
             <footer>
-                meow ・ nya
+                nya
             </footer>
         </div>
     )
