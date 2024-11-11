@@ -1,12 +1,12 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Transition } from "@headlessui/react";
+"use client"
+import React, { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Transition } from "@headlessui/react"
 
 
 
 const Clock = () => {
-    const [time, setTime] = useState("");
+    const [time, setTime] = useState("")
 
     useEffect(() => {
         const updateTime = () => {
@@ -16,16 +16,16 @@ const Clock = () => {
                 minute: "2-digit",
                 second: "2-digit",
                 hour12: false,
-            });
-            const currentTime = LondonTimeFormatter.format(new Date());
-            setTime(currentTime);
-        };
+            })
+            const currentTime = LondonTimeFormatter.format(new Date())
+            setTime(currentTime)
+        }
 
-        const interval = setInterval(updateTime, 1000);
-        updateTime(); // to set the initial time immediately
+        const interval = setInterval(updateTime, 1000)
+        updateTime() // to set the initial time immediately
 
-        return () => clearInterval(interval);
-    }, []);
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <div className="">
@@ -52,7 +52,7 @@ const Clock = () => {
             {/* </motion.div> */}
 
         </div >
-    );
-};
+    )
+}
 
-export default Clock;
+export default Clock
