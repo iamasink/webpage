@@ -12,6 +12,9 @@ const Tooltip: React.FC<OuterPageProps> = ({ children }) => {
             <div className="mx-6">
                 {children}
             </div>
+            <footer>
+                meow ・ nya
+            </footer>
         </div>
     )
 }
