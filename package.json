@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3005",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "node scripts/copy-attachments.js && next build",
     "start": "next start",
     "lint": "next lint"
@@ -39,5 +39,8 @@
     "sharp": "0.33.5",
     "tailwindcss": "3.4.14",
     "typescript": "5.6.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
