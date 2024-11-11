@@ -21,6 +21,7 @@ I wish that day was today, but my hands ache and I'm tired and I can't be bother
 
 Random thought that came to me: I also wish I could have hover hints on text. 
 # Paper
+Like.. the actual physical stuff.
 I don't use paper for anything I'll want to look at much later. 
 It sometimes acts as a pagefile for my brain, when it's less effort to use a pen than to use the keyboard, which is rare. But diagrams and tables and that generally live here.
 My handwriting is awful, and I'm way faster at typing. It wouldn't make sense for me to use it for text.
