@@ -1,24 +1,24 @@
-import Image from "next/image"
-
-import Head from "next/head"
 import Link from "next/link"
-import Header from "@/components/Header"
-import { getAllMarkdownSlugs } from "@/lib/markdown"
 import OuterPage from "@/components/OuterPage"
 import { getSortedPostsData } from "@/lib/blog"
-import { Post } from "@/interfaces/post"
 
-/*
-old index text:
-hi! welcome!! whats up!?
-im not really one for writing, but apparently i have stuff to say after one too many twitter threads ( senseless ramblings), one of which i copied here at "[[The current state of YouTube subtitles]]"
 
-this took me 4 attempts to setup and i dont even know what i wanna do with it
-read more about the static site generator this uses, and some other thoughts i have about this place: [[Quartz]]
 
-*/
 export default async function Home() {
-    const allPosts = await getSortedPostsData()
+    const allPosts = getSortedPostsData()
+    // const allPosts = [
+    //     {
+    //         slug: '2024-04-24-title',
+    //         title: 'title',
+    //         draft: false,
+    //         aliases: ['aaaaa'],
+    //         tags: [],
+    //         description: 'abcdef',
+    //         date: Date.parse("2024-04-24")
+    //     }
+    // ]
+
+    console.log(allPosts)
 
     return (
         <OuterPage>
@@ -35,5 +35,13 @@ export default async function Home() {
                 </div>
             </div>
         </OuterPage>
+        // <div>
+        //     <ul>
+        //         {allPosts.map((post) => (
+        //             <li key={post.slug}>{post.slug}</li>
+        //         ))}
+        //     </ul>
+        // </div>
+
     )
 }
