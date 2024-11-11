@@ -3,11 +3,8 @@ import path from 'path'
 import { remark } from 'remark'
 import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
-import html from 'remark-html'
-import remarkImages from 'remark-images'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkHtml from 'remark-html'
-import remarkWikilinks from 'remark-wiki-link'
 
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
@@ -26,7 +23,6 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
 
             // If the image file exists, return the correct public URL
             if (fs.existsSync(imagePath)) {
-
                 return `![${p1}](/Attachments/${encodeURIComponent(p1)})`
             }
             return match
@@ -57,5 +53,5 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
 
 
 export function getAllMarkdownSlugs() {
-    return fs.readdirSync(contentDirectory).map((filename) => filename.replace(/\.md$/, ''))
+    return fs.readdirSync(contentDirectory).filter(file => file.endsWith('.md')).map((filename) => filename.replace(/\.md$/, ''))
 }
