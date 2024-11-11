@@ -7,9 +7,9 @@ interface OuterPageProps {
 
 const Tooltip: React.FC<OuterPageProps> = ({ children }) => {
     return (
-        <div className="">
+        <div className="min-h-screen ">
             <Header></Header>
-            <div className="mx-6">
+            <div className="">
                 {children}
             </div>
             <footer>
