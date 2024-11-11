@@ -19,6 +19,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     return { title: `Blog - ${params.slug.replace('-', ' ')}` }  // Customize title based on slug
 }
 
+
 // Page component for rendering the Markdown content
 export default async function BlogPostPage(props: { params: Promise<{ slug: string }> }) {
     const params = await props.params
@@ -27,7 +28,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     return (
         <OuterPage>
             <div className='flex justify-center'>
-                <div className='border-rose-800 border-2 rounded-2xl bg-slate-800 ' style={{ maxWidth: "1000px" }}>
+                <div className='border-rose-800 border-2 rounded-2xl bg-slate-800 ' style={{ width: "75%" }}>
                     <div className='pt-4 '>
                         <Link className="px-10 m-0 text-rose-600" href="/blog">← Go Back</Link>
                         <MarkdownText slug={`${params.slug}`}></MarkdownText>
@@ -37,3 +38,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
         </OuterPage>
     )
 }
+
+// ensure this isn't tried to be generated when running, if the url doesnt exist then it will redirect to 404 instead of error :D
+export const dynamic = 'force-static'
+export const dynamicParams = false

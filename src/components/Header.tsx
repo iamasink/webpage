@@ -6,7 +6,7 @@ interface HeaderProps { }
 
 const Header: React.FC<HeaderProps> = ({ }) => {
 	return (
-		<div className="mb-32 grid text-center lg:mb-0 lg:text-left">
+		<div className="grid text-center mb-0 ">
 			<div className="items-top p-x-10 flex text-left">
 				<Pfp></Pfp>
 				<div className="">
