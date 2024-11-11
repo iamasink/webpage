@@ -3,8 +3,8 @@ const path = require('path')
 
 const getMarkdownFiles = (dir) => {
     const files = fs.readdirSync(dir)
-    // return files.filter(file => file.endsWith('.md')).map(file => path.join(dir, file))
-    return files.map(file => path.join(dir, file))
+    return files.filter(file => file.endsWith('.md')).map(file => path.join(dir, file))
+    // return files.map(file => path.join(dir, file))
 }
 
 const getDateFromFrontmatter = (content) => {
