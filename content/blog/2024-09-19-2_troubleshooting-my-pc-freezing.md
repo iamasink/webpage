@@ -86,7 +86,7 @@ Heres the error anyway
 >    at YUR.Fit.Windows.WindowsBtLeHrmProvider.\<StartDeviceScan>d__35.MoveNext()
 
 It might be seeming like its time for a Windows reset...
-I also created a page with my [[Full PC specs]] 
+I also created a page with my [[2024-09-19-1_full-pc-specs]]
 but also here:
 > [!NOTE]- PC Specs
 > PCPartPicker Part List: https://uk.pcpartpicker.com/list/gLfbFs

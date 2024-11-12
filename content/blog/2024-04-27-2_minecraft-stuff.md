@@ -16,7 +16,7 @@ this guys farms are really good https://www.youtube.com/@bigbooty17/videos
 # server
 [GitHub - itzg/docker-minecraft-server: Docker image that provides a Minecraft Server that will automatically download selected version at startup](https://github.com/itzg/docker-minecraft-server)
 [GitHub - itzg/mc-router: Routes Minecraft client connections to backend servers based upon the requested server address](https://github.com/itzg/mc-router)
-Read about how I use these at [[Minecraft servers implementation]]
+Read about how I use these at [[2024-04-27-1_minecraft-servers-implementation]]
 
 # builds
 ## cherry biome :3

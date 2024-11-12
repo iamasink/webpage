@@ -27,7 +27,7 @@ an empty Discord group.
 This group has existed for almost 5 years, but for a long time was just a place to test embeds/images/links/markdown or just dump stuff I needed for later. 
 
 Then, for while, it would also be a place to write my negative thoughts.
-I realise I generally log a lot of these thoughts like I'm troubleshooting something. I guess in a way, I am? It reminds me of when I'm [[Troubleshooting my PC freezing|troubleshooting an issue with my pc]]
+I realise I generally log a lot of these thoughts like I'm troubleshooting something. I guess in a way, I am? It reminds me of when I'm [[2024-09-19-2_troubleshooting-my-pc-freezing]]
 
 But this Discord channel holds more than just my sad thoughts now. It's where my fleeting thoughts go: ideas, to-dos, and dreams.  
 I really like logging my dreams, otherwise they're lost. I think I've heard that its useful if you want to lucid dream.. personally, I just like reading them back.   
