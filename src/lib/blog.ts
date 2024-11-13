@@ -27,7 +27,7 @@ export function getAllPosts(): Post[] {
 }
 
 export function getSortedPostsData() {
-    const fileNames = fs.readdirSync(postsDirectory).filter((filename) => filename.endsWith(".md"))
+    const fileNames = fs.readdirSync(postsDirectory).filter((filename) => filename.endsWith(".md")).filter(file => !file.includes("draft"))
     const allPostsData = fileNames.map((fileName) => {
         const slug = fileName.replace(/\.md$/, '')
 
