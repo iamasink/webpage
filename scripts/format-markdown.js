@@ -59,13 +59,45 @@ const main = () => {
     // sort by date (oldest to newest)
     fileData.sort((a, b) => new Date(a.frontmatterDate).getTime() - new Date(b.frontmatterDate).getTime())
 
-    // group files by date and rename them accordingly
+    // group files by date
     const dateGroups = {}
 
     fileData.forEach(({ file, frontmatterDate, content }) => {
         const filename = path.basename(file, '.md')
 
-        // extract the date in YYYY-MM-DD format (ignores time if present)
+        // update contents
+
+        // replace unnamed wikilinks with title
+        fs.writeFileSync(path.join(process.cwd(), 'content', 'blog', filename + ".md"),
+            content.replace(/\[\[(\d{4}[-]\d{2}[-]\d{2}[-]\d{1,2}_[a-zA-Z0-9-_]+)\]\]/g, (match, p1) => {
+                const fileLinkPath = path.join(process.cwd(), 'content', 'blog', p1 + ".md")
+                console.log("replacing in", filename, ": ", fileLinkPath)
+                // console.log(p1)
+
+                // If the file exists
+                if (fs.existsSync(fileLinkPath)) {
+                    const otherfilecontents = fs.readFileSync(fileLinkPath, 'utf8')
+                    console.log("exists")
+                    const frontmatterMatch = otherfilecontents.match(/^---[\r\n]+([\s\S]+?)[\r\n]+---/)
+                    // console.log(frontmatterMatch)
+                    let frontmatterTitle = ""
+                    if (frontmatterMatch) {
+                        const titleMatch = frontmatterMatch[1].match(/^title:\s*(.*)\s*/m)
+                        frontmatterTitle = titleMatch ? titleMatch[1] : ""
+                        const newTitle = `[[${p1}|${frontmatterTitle.trim()}]]`
+                        console.log(`title: '${frontmatterTitle}' to : '${newTitle}'`)
+                        return newTitle
+                    }
+                }
+                console.log("nah nvm")
+                return match
+            })
+        )
+
+
+        //
+
+        // extract the date ( YYYY-MM-DD)
         const dateKey = frontmatterDate.split('T')[0]
 
         // add the date if it doesn't exist
@@ -81,7 +113,7 @@ const main = () => {
         group.forEach((item, index) => {
             const sanitizedFilename = sanitizeFilename(item.filename.trim())
 
-            console.log(sanitizedFilename)
+            // console.log(sanitizedFilename)
             let newFilename
 
             // if (group.length > 1) {
@@ -95,8 +127,13 @@ const main = () => {
             // }
 
             const newFilePath = path.join(path.dirname(item.file), newFilename)
-            console.log(`Renaming ${item.file} to ${newFilePath}`)
-            fs.renameSync(item.file, newFilePath)
+            if (item.file === newFilePath) {
+                // if renaming it wont do anything
+                console.log(`Not renaming ${item.file} cuz its the same lol `)
+            } else {
+                console.log(`Renaming ${item.file} to ${newFilePath}`)
+                fs.renameSync(item.file, newFilePath)
+            }
         })
     })
 }
