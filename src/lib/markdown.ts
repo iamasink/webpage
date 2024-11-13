@@ -42,7 +42,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             .use(remarkGfm)
             .use(remarkFrontmatter)
             // .use(remarkWikilinks)
-            .use(remarkHtml, {})
+            .use(remarkHtml, { sanitize: false })
             .process(contentWithLineBreaks)
         return processedContent.toString()
     } catch (error) {
@@ -53,5 +53,5 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
 
 
 export function getAllMarkdownSlugs() {
-    return fs.readdirSync(contentDirectory).filter(file => file.endsWith('.md')).map((filename) => filename.replace(/\.md$/, ''))
+    return fs.readdirSync(contentDirectory).filter(file => file.endsWith('.md')).filter(file => !file.includes("draft")).map((filename) => filename.replace(/\.md$/, ''))
 }
