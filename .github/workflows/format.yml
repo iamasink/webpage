@@ -35,7 +35,11 @@ jobs:
 
     - name: Run script to format titles in Markdown files
       run: |
-        node scripts/format-markdown.js
+        node scripts/format-titles.js
+
+    - name: Run script to format links in Markdown files
+      run: |
+        node scripts/format-links.js
 
     - name: Run script to copy attachments
       run: |
