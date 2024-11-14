@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 const NameTitle: React.FC = ({ }) => {
 	return (
@@ -15,7 +15,7 @@ const NameTitle: React.FC = ({ }) => {
 				.
 			</h2> */}
 		</div>
-	);
-};
+	)
+}
 
-export default NameTitle;
+export default NameTitle
