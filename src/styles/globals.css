@@ -65,9 +65,6 @@ body {
 /* for markdown articles */
 /* Global styles for Markdown */
 article {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
   -webkit-user-select: text; /* Safari */
   -ms-user-select: text; /* IE 10 and IE 11 */
   user-select: text;

@@ -1,10 +1,24 @@
-import Image from "next/image";
-import Tooltip from "./Tooltip";
+import Image from "next/image"
+import Tooltip from "./Tooltip"
 
-const Pfp: React.FC = ({ }) => {
+interface PfpProps {
+	size?: number
+	tooltip?: boolean
+}
+
+const alt = "pfp art by shioneko114"
+const ttooltip = (<div className="">
+	<span className="absolute left-1/2 top-8 -translate-x-1/2 scale-0 transform whitespace-nowrap rounded bg-gradient-to-br from-pink-950 to-pink-500 bg-[length:400px_200px] p-2 text-xs text-white opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100">
+		<a draggable="true" target="_blank" rel="noopener noreferrer" href="https://twitter.com/shioneko114/status/1695414505151635514">
+			{alt}
+		</a>
+	</span>
+</div>)
+
+
+const Pfp: React.FC<PfpProps> = ({ size = 200, tooltip = true }) => {
 	//const alt="pfp art by shioneko114 https://twitter.com/shioneko114/status/1700896958682959929"
 	//  https://twitter.com/shioneko114/status/1695414505151635514
-	const alt = "pfp art by shioneko114"
 
 	return (
 		<div className="place-content-center ">
@@ -13,8 +27,8 @@ const Pfp: React.FC = ({ }) => {
 					src="/pfp.png"
 					alt={alt}
 					draggable={false}
-					width={200}
-					height={200}
+					width={size}
+					height={size}
 					style={{
 						borderRadius: "15%",
 						border: "3px solid #ffffff",
@@ -23,13 +37,8 @@ const Pfp: React.FC = ({ }) => {
 					className="m-4"
 				// sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				></Image>
-				<div className="">
-					<span className="absolute left-1/2 top-8 -translate-x-1/2 scale-0 transform whitespace-nowrap rounded bg-gradient-to-br from-pink-950 to-pink-500 bg-[length:400px_200px] p-2 text-xs text-white opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100">
-						<a draggable="true" target="_blank" rel="noopener noreferrer" href="https://twitter.com/shioneko114/status/1695414505151635514">
-							{alt}
-						</a>
-					</span>
-				</div>
+				{tooltip && ttooltip}
+
 			</div>
 
 			{/* 
@@ -50,7 +59,7 @@ const Pfp: React.FC = ({ }) => {
 					></Image>
 				</Tooltip> */}
 		</div>
-	);
-};
+	)
+}
 
-export default Pfp;
+export default Pfp

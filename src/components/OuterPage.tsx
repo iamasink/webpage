@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "./Header"
+import HeaderSmall from "./HeaderSmall"
 
 interface OuterPageProps {
     children: React.ReactNode
@@ -8,7 +9,7 @@ interface OuterPageProps {
 const Tooltip: React.FC<OuterPageProps> = ({ children }) => {
     return (
         <div className="flex-col flex min-h-screen">
-            <Header></Header>
+            <HeaderSmall></HeaderSmall>
             <div className="flex-1">
                 {children}
             </div>
