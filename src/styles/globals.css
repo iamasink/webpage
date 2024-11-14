@@ -37,9 +37,9 @@ body {
 .animated-background {
 	background-size: 150%;
 
-	-webkit-animation: animatedbackgroundanim 15s ease infinite;
-	-moz-animation: animatedbackgroundanim 15s ease infinite;
-	animation: animatedbackgroundanim 15s ease infinite;
+	-webkit-animation: animatedbackgroundanim 60s ease infinite;
+	-moz-animation: animatedbackgroundanim 60s ease infinite;
+	animation: animatedbackgroundanim 60s ease infinite;
 }
 
 .animated-background-fast {
