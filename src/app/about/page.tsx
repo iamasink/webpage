@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from "next/image"
 
-import Head from "next/head";
-import Link from "next/link";
-import Header from "@/components/Header";
+import Head from "next/head"
+import Link from "next/link"
+import Header from "@/components/Header"
 
 export default function Home() {
 	return (
@@ -24,5 +24,5 @@ export default function Home() {
 				</div>
 			</main>
 		</div>
-	);
+	)
 }

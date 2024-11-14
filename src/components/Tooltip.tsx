@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
 interface TooltipProps {
-	children: React.ReactNode;
-	message: string;
+	children: React.ReactNode
+	message: string
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ children, message }) => {
@@ -15,7 +15,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, message }) => {
 				</span>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Tooltip;
+export default Tooltip

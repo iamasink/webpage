@@ -1,20 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 interface SocialLinkProps {
-	href: string;
-	src: string;
-	alt: string;
-	newtab?: boolean;
+	href: string
+	src: string
+	alt: string
+	newtab?: boolean
 }
 
-let target = "";
-let rel = "noopener noreferrer";
+let target = ""
+let rel = "noopener noreferrer"
 
 const SocialLinkSmall: React.FC<SocialLinkProps> = ({ href, src, alt, newtab = false }) => {
 	if (newtab) {
-		target = "_blank";
-		rel = "noopener noreferrer";
+		target = "_blank"
+		rel = "noopener noreferrer"
 	}
 	return (
 		<Link
@@ -35,7 +35,7 @@ const SocialLinkSmall: React.FC<SocialLinkProps> = ({ href, src, alt, newtab = f
 				/>
 			</div>
 		</Link>
-	);
-};
+	)
+}
 
-export default SocialLinkSmall;
+export default SocialLinkSmall
