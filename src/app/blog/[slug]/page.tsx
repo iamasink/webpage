@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import MarkdownText from '@/components/MarkdownText'
 import OuterPage from '@/components/OuterPage'
+import SlateBackground from '@/components/SlateBackground'
 import { getMarkdownContent, getAllMarkdownSlugs } from '@/lib/markdown'
 import { Metadata } from 'next'
 import Head from 'next/head'
@@ -28,12 +29,14 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     return (
         <OuterPage>
             <div className='flex justify-center'>
-                <div className='border-rose-800 border-2 rounded-2xl bg-slate-800 ' style={{ width: "75%" }}>
-                    <div className='pt-4 '>
-                        <Link className="px-10 m-0 text-rose-600" href="/blog">← Go Back</Link>
-                        <MarkdownText slug={`${params.slug}`}></MarkdownText>
+                <SlateBackground>
+                    <div className='mt-4 mx-10' >
+                        <Link className="m-0 text-rose-600" href="/blog">← Go Back</Link>
+                        <div className=''>
+                            <MarkdownText slug={`${params.slug}`}></MarkdownText>
+                        </div>
                     </div>
-                </div>
+                </SlateBackground>
             </div>
         </OuterPage>
     )
