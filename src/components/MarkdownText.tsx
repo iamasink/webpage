@@ -25,12 +25,12 @@ const MarkdownText: React.FC<MarkdownTextProps> = async ({
 
     return (
         <div>
-            <h1 className="px-10  m-0 text-4xl">{title}</h1>
-            <h2 className="px-10  m-0 text-2xl">{date.toISOString().split("T")[0]}</h2>
-            <h3 className="px-10  m-0"> {a}            </h3>
+            <h1 className="  text-4xl">{title}</h1>
+            <h2 className="  text-2xl">{date.toISOString().split("T")[0]}</h2>
+            <h3 className=" "> {a}            </h3>
             <br />
             <hr className="border-rose-800" />
-            <article className="px-10 pt-4 m-0 " dangerouslySetInnerHTML={{ __html: content }} />
+            <article className="pt-4 font-normal " dangerouslySetInnerHTML={{ __html: content }} />
         </div>
     )
 }
