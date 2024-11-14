@@ -133,6 +133,7 @@ const main = () => {
             } else {
                 console.log(`Renaming ${item.file} to ${newFilePath}`)
                 fs.renameSync(item.file, newFilePath)
+                // TODO: search through all files and edit any references to this file
             }
         })
     })
