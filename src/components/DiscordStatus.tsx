@@ -21,7 +21,7 @@ const DiscordStatus: React.FC = ({ }) => {
     }
     return (
         <motion.div
-            initial={{ y: 0, opacity: 0 }}
+            initial={{ y: 0, opacity: 1 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 3 }}
         >

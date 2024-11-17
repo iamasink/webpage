@@ -45,6 +45,8 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             .use(remarkHtml, { sanitize: false })
             .process(contentWithLineBreaks)
         return processedContent.toString()
+            // replace footnote text with hr
+            .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/>`)
     } catch (error) {
         console.error('Error reading file:', error)
         return null

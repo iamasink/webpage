@@ -29,7 +29,7 @@ export default function Home() {
 							<p className="text-pink-100">
 								haii :3c
 							</p>
-							<p className="m-0 pt-9 text-2xl ">
+							<p className="pt-9 text-2xl ">
 								<span className="text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100">
 									&lt;3
 								</span>
@@ -47,7 +47,7 @@ export default function Home() {
 					</div>
 
 					<div className="">
-						<p className="">My time (<span className="font-mono">Europe/London</span>):						</p>
+						<p className="">My time (<span className="font-mono">Europe/London</span>):</p>
 						<Clock></Clock>
 					</div>
 					<DiscordStatus></DiscordStatus>
