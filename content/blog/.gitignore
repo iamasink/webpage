@@ -3,4 +3,4 @@
 # ignore .obsidian, .trash, etc.
 /.*/
 # remove drafts
-*draft.md
+*draft*.md
