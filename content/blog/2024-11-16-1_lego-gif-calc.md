@@ -1,6 +1,6 @@
 ---
-title: 
-description: 
+title: lego gif calc
+description: really big lego brick
 aliases: 
 tags: 
 date: 2024-11-16T23:21:29+00:00
@@ -19,3 +19,4 @@ so `9.6*9^294`
 `~3.526 × 10^280` bricks.
 or
 `~3.73 × 10^261` lightyears
+which is an inconceivably large number.
