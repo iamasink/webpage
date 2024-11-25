@@ -56,7 +56,7 @@ export default function Home() {
 						<div>
 							<SocialLink
 								href="https://bsky.app/profile/iamas.ink"
-								src="/bluesky.svg"
+								src="/copy.svg"
 								alt="Bluesky"
 								text="Bluesky"
 								newtab={true}
