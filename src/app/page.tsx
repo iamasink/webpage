@@ -57,35 +57,30 @@ export default function Home() {
 							<SocialLink
 								href="https://bsky.app/profile/iamas.ink"
 								src="/copy.svg"
-								alt="Bluesky"
 								text="Bluesky"
 								newtab={true}
 							/>
 							<SocialLink
 								href="/blog"
 								src="/oldpfp.jpg"
-								alt=""
 								text="Blog"
 								newtab={false}
 							/>
 							<SocialLink
 								href="https://github.com/iamasink"
 								src="/github.svg"
-								alt="GitHub"
 								text="GitHub"
 								newtab={true}
 							/>{" "}
 							<SocialLink
 								href="https://discord.gg/xzZHfMw887"
 								src="/discord.svg"
-								alt="Discord"
 								text="Discord"
 								newtab={true}
 							/>
 							<SocialLink
 								href="https://steamcommunity.com/id/iamasink/"
 								src="/steam.svg"
-								alt="Steam"
 								text="Steam"
 								newtab={true}
 							/>

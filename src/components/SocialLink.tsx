@@ -4,7 +4,6 @@ import Link from "next/link"
 interface SocialLinkProps {
 	href: string
 	src: string
-	alt: string
 	text: string
 	newtab?: boolean
 }
@@ -14,7 +13,6 @@ interface SocialLinkProps {
 const SocialLink: React.FC<SocialLinkProps> = ({
 	href,
 	src,
-	alt,
 	text,
 	newtab = false,
 }) => {
