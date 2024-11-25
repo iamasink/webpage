@@ -6,6 +6,13 @@ import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkHtml from 'remark-html'
 import remarkWikiLink from "remark-wiki-link"
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+import rehypePrettyCode from "rehype-pretty-code"
+import { transformerCopyButton } from '@rehype-pretty/transformers'
+
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
 
@@ -37,15 +44,30 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
         // console.log(updatedContent)
 
         // Process the Markdown content to HTML
-        const processedContent = await remark()
-            .use(remarkBreaks)
-            .use(remarkGfm)
-            .use(remarkFrontmatter)
-            .use(remarkWikiLink, { aliasDivider: '|', hrefTemplate: (permalink: string) => permalink })
-            .use(remarkHtml, { sanitize: false })
+        const processedContent = await unified()
+            .use(remarkParse) // Parse Markdown to syntax tree
+            .use(remarkBreaks) // Support hard line breaks
+            .use(remarkGfm) // GitHub Flavored Markdown
+            .use(remarkFrontmatter) // Parse frontmatter
+            .use(remarkWikiLink, {
+                aliasDivider: '|',
+                hrefTemplate: (permalink: string) => permalink,
+            }) // WikiLink support
+            //
+            .use(remarkRehype) // Convert Markdown to HTML-compatible AST
+            .use(rehypePrettyCode, {
+                theme: "github-dark-dimmed",
+                defaultLang: "plaintext",
+                // transformers: [
+                //     transformerCopyButton({
+                //         visibility: 'hover',
+                //         feedbackDuration: 3_000,
+                //     }),
+                // ],
+            })
+            .use(rehypeStringify) // Serialize HTML
             .process(contentWithLineBreaks)
         return processedContent.toString()
-            // replace footnote text with hr
             .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/>`)
     } catch (error) {
         console.error('Error reading file:', error)
