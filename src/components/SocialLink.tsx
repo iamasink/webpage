@@ -36,7 +36,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 					<Image
 						className="inline-block object-center align-middle"
 						src={src}
-						alt={alt}
+						alt=""
 						height={40}
 						width={40}
 						draggable={false}
