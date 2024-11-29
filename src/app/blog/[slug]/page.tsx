@@ -22,7 +22,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     // fetch title from the frontmatter
     const title = data.title
 
-    return { title: `Blog - ${title}` }  // Customize title based on slug
+    return { title: `Blog - ${title}` }  // Customize title 
 }
 
 

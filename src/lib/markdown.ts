@@ -12,6 +12,7 @@ import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypePrettyCode from "rehype-pretty-code"
 import { transformerCopyButton } from '@rehype-pretty/transformers'
+import rehypeVideo from 'rehype-video'
 
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
@@ -25,14 +26,19 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
         const fileContent = fs.readFileSync(filePath, 'utf8')
 
         // Replace image paths with the correct URL
-        const updatedContent = fileContent.replace(/!\[\[([^\]]+)\]\]/g, (match, p1) => {
-            const imagePath = path.join(attachmentsDirectory, p1)
+        const updatedContent = fileContent.replace(/!\[\[(Attachments\/)?([^\]]+)\]\]/g, (match, p1, p2) => {
+            console.log(`updating image ${match} - ${p1} - ${p2}`)
+            const imagePath = path.join(attachmentsDirectory, p2)
 
             // If the image file exists, return the correct public URL
-            if (fs.existsSync(imagePath)) {
-                return `![${p1}](/Attachments/${encodeURIComponent(p1)})`
+            if (!fs.existsSync(imagePath)) {
+                console.log(`image ${imagePath} doesnt exist`)
+                return match
             }
-            return match
+            if (imagePath.endsWith(".mp4")) {
+                return `[Video. Click to view](/Attachments/${encodeURIComponent(p2)})`
+            }
+            return `![${p2}](/Attachments/${encodeURIComponent(p2)})`
         })
 
         // fix linebraks
@@ -65,7 +71,10 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
                 //     }),
                 // ],
             })
-            .use(rehypeStringify) // Serialize HTML
+            .use(rehypeVideo)
+            .use(rehypeStringify, {
+                allowDangerousHtml: true
+            }) // Serialize HTML
             .process(contentWithLineBreaks)
         return processedContent.toString()
             .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/>`)
