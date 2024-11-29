@@ -17,4 +17,4 @@ This word has lost its meaning now.
 I find that it's too easy to hide behind complicated words.
 
 I'm too complicated for myself...
-I wish I'd be simpler.
+I wish it'd be simpler.
