@@ -33,7 +33,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
         <OuterPage>
             <div className='flex justify-center'>
                 <SlateBackground>
-                    <div className='mt-4 mx-10' >
+                    <div className='' >
                         <Link className="m-0 text-rose-600" href="/blog">← Go Back</Link>
                         <div className=''>
                             <MarkdownText slug={`${params.slug}`}></MarkdownText>
