@@ -178,7 +178,7 @@ const main = () => {
                 console.log(`Not renaming ${item.file} cuz its the same lol `)
             } else {
                 console.log(`Renaming ${item.file} to ${newFilePath}`)
-                updateRedirects("/" + item.file.replace("content\\", "").replace("\\", "/"), "/" + newFilePath.replace("content\\", "").replace("\\", "/"));
+                // updateRedirects("/" + item.file.replace("content\\", "").replace("\\", "/"), "/" + newFilePath.replace("content\\", "").replace("\\", "/"));
                 modifyCount++
 
                 fs.renameSync(item.file, newFilePath)
