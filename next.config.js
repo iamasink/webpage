@@ -1,3 +1,6 @@
+const path = require('path')
+const fs = require("fs")
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
@@ -19,9 +22,20 @@ const nextConfig = {
     //     ];
     // },
     async redirects() {
-        return [
-            { source: '/spotify', destination: 'https://open.spotify.com/user/ettjjmbfyjuz3o6hz1ejvu1d6', permanent: true, }, { source: '/reddit', destination: 'https://www.reddit.com/user/Iamasink', permanent: true, }, { source: '/youtube', destination: 'https://www.youtube.com/@iamasink', permanent: true, }, { source: '/yt', destination: 'https://www.youtube.com/@iamasink', permanent: true, }, { source: '/twitter/:slug*', destination: 'https://twitter.com/iamasink/:slug*', permanent: true, }, { source: '/twitter2/:slug*', destination: 'https://twitter.com/lilynekoi/:slug*', permanent: true, }, { source: '/github/:slug*', destination: 'https://github.com/iamasink/:slug*', permanent: true, }, { source: '/gh/:slug*', destination: 'https://github.com/iamasink/:slug*', permanent: true, }, { source: '/ git/:slug*', destination: 'https://github.com/iamasink/:slug*', permanent: true, }, { source: '/steam/:slug*', destination: 'https://steamcommunity.com/profiles/76561198301681888/:slug*', permanent: true, }, { source: '/lastfm', destination: 'https://www.last.fm/user/Iamasink', permanent: true, }, { source: '/discord', destination: 'https://discord.gg/xzZHfMw887', permanent: true, }, { source: '/ko-fi', destination: 'https://ko-fi.com/iamasink', permanent: true, }, { source: '/kofi', destination: 'https://ko-fi.com/iamasink', permanent: true, }, { source: '/coffee', destination: 'https://ko-fi.com/iamasink', permanent: true, }, { source: '/donate', destination: 'https://ko-fi.com/iamasink', permanent: true, }, { source: '/gift', destination: 'https://ko-fi.com/iamasink', permanent: true, }, { source: '/money', destination: 'https://ko-fi.com/iamasink', permanent: true, }, { source: '/osu', destination: 'https://osu.ppy.sh/users/12841742', permanent: true, }, { source: '/tetrio', destination: 'https://ch.tetr.io/u/iamasink', permanent: true, }, { source: '/tetris', destination: 'https://ch.tetr.io/u/iamasink', permanent: true, }, { source: '/gdev', destination: 'https://g.dev/sink', permanent: true, }, { source: '/scoresaber', destination: 'https://scoresaber.com/u/76561198301681888', permanent: true, }, { source: '/ss', destination: 'https://scoresaber.com/u/76561198301681888', permanent: true, }, { source: '/beatsaver', destination: 'https://beatsaver.com/profile/4284452', permanent: true, }, { source: '/bs', destination: 'https://beatsaver.com/profile/4284452', permanent: true, }, { source: '/twitch', destination: 'https://twitch.tv/iamasink', permanent: true, }, { source: '/ttv', destination: 'https://twitch.tv/iamasink', permanent: true, }, { source: '/mail', destination: 'mailto:lily@yoink.org.uk', permanent: true, }, { source: '/email', destination: 'mailto:lily@yoink.org.uk', permanent: true, }, { source: '/contact', destination: 'mailto:lily@yoink.org.uk', permanent: true, }, { source: '/mailto', destination: 'mailto:lily@yoink.org.uk', permanent: true, }, { source: '/bot', destination: 'https://github.com/iamasink/lilysbot', permanent: true, }, { source: '/anilist/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/al/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/anime/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/mal/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/animelist/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/anime-list/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/anilist.co/:slug*', destination: 'https://anilist.co/user/sink/:slug*', permanent: true, }, { source: '/archive.org', destination: 'https://archive.org/details/@iamasink', permanent: true, }, { source: '/archive', destination: 'https://archive.org/details/@iamasink', permanent: true, }, { source: '/beastsaber', destination: 'https://bsaber.com/members/iamasink/', permanent: true, }, { source: '/bsaber', destination: 'https://bsaber.com/members/iamasink/', permanent: true, }, { source: '/faceit', destination: 'https://www.faceit.com/en/players/Iamasink', permanent: true, }, { source: '/itch.io/:slug*', destination: 'https://iamasink.itch.io//:slug*', permanent: true, }, { source: '/itch/:slug*', destination: 'https://iamasink.itch.io//:slug*', permanent: true, }, { source: '/itchio/:slug*', destination: 'https://iamasink.itch.io//:slug*', permanent: true, }, { source: '/tradelink', destination: 'https://steamcommunity.com/tradeoffer/new/?partner=341416160&token=raP39J70', permanent: true, }, { source: '/trade', destination: 'https://steamcommunity.com/tradeoffer/new/?partner=341416160&token=raP39J70', permanent: true, }, { source: '/monkeytype', destination: 'https://monkeytype.com/profile/Iamasink', permanent: true, }, { source: '/bluesky/:slug*', destination: 'https://bsky.app/profile/iamas.ink/:slug*', permanent: true, }, { source: '/bsky/:slug*', destination: 'https://bsky.app/profile/iamas.ink/:slug*', permanent: true, }
-        ]
+        const redirectsFile1 = path.join(__dirname, 'redirects.json');
+        const redirectsFile2 = path.join(__dirname, 'redirects2.json');
+
+        const redirects1 = JSON.parse(fs.readFileSync(redirectsFile1, 'utf-8'));
+        const redirects2 = JSON.parse(fs.readFileSync(redirectsFile2, 'utf-8'));
+
+        // Combine both redirect arrays
+        const allRedirects = [...redirects1, ...redirects2];
+
+        return allRedirects.map(redirect => ({
+            source: redirect.source,
+            destination: redirect.destination,
+            permanent: redirect.permanent
+        }));
     }
 }
 // #endregion

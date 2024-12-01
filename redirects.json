@@ -1,0 +1,22 @@
+[
+  {
+    "source": "/blog/2024-11-16-1_mobile-test",
+    "destination": "/blog/2024-11-17-1_mobile-test-renamed",
+    "permanent": true
+  },
+  {
+    "source": "/blog/2024-11-15-mobile",
+    "destination": "/blog/2024-11-17-1_mobile-test-renamed",
+    "permanent": true
+  },
+  {
+    "source": "/test",
+    "destination": "https://google.com",
+    "permanent": true
+  },
+  {
+    "source": "/blog/2024-11-29-1_hello-sand 2.md",
+    "destination": "/blog/2024-11-29-1_hello-sand-2.md",
+    "permanent": true
+  }
+]
