@@ -13,6 +13,35 @@ const getDateFromFrontmatter = (content) => {
     return null
 }
 
+const updateRedirects = (oldUrl, newUrl) => {
+    const filePath = path.join(__dirname, '..', 'redirects.json');
+    let redirects = [];
+
+    if (fs.existsSync(filePath)) {
+        redirects = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+
+    // check if oldUrl already exists in the redirects
+    const existingRedirect = redirects.find(redirect => redirect.source === oldUrl);
+    if (existingRedirect) {
+        // Update redirect to point to the new URL
+        existingRedirect.destination = newUrl;
+    } else {
+        // Add a new redirect entry
+        redirects.push({ source: oldUrl, destination: newUrl, permanent: true });
+    }
+
+    // Update all redirects to point to the destination url
+    redirects.forEach(redirect => {
+        const finalRedirect = redirects.find(r => r.source === redirect.destination);
+        if (finalRedirect) {
+            redirect.destination = finalRedirect.destination;
+        }
+    });
+
+    fs.writeFileSync(filePath, JSON.stringify(redirects, null, 2));
+    console.log(`Redirects updated: ${oldUrl} -> ${newUrl}`);
+};
 
 
 const sanitizeFilename = (filename) => {
@@ -33,6 +62,7 @@ const sanitizeFilename = (filename) => {
 }
 
 const main = () => {
+    let modifyCount = 0
     const dir = './content/blog'
     const files = getMarkdownFiles(dir)
 
@@ -52,6 +82,7 @@ const main = () => {
             frontmatterDate = stats.mtime.toISOString()
             const newFrontmatter = `---\ntitle: ${path.basename(file, ".md")}\ndescription: \naliases: \ntags: \ndate: ${frontmatterDate}\n---\n`
             fs.writeFileSync(file, newFrontmatter + content)
+            modifyCount++
         }
         return { file: file, frontmatterDate, content }
     })
@@ -64,6 +95,21 @@ const main = () => {
 
     fileData.forEach(({ file, frontmatterDate, content }) => {
         const filename = path.basename(file, '.md')
+        if (filename.includes("draft")) {
+            console.log("handling draft: ", filename)
+            const sanitizedFilename = sanitizeFilename(filename.trim().replace(/[-_ ]*draft[-_ ]*/, ""))
+            console.log("filename", sanitizedFilename)
+
+            const newFilename = `draft - ${sanitizedFilename}.md`
+            const newFilePath = path.join(path.dirname(file), newFilename)
+            if (file != newFilePath) {
+                console.log(`Renaming ${file} to ${newFilePath}`)
+
+                modifyCount++
+                fs.renameSync(file, newFilePath)
+            }
+            return
+        }
 
         // update contents
 
@@ -132,11 +178,20 @@ const main = () => {
                 console.log(`Not renaming ${item.file} cuz its the same lol `)
             } else {
                 console.log(`Renaming ${item.file} to ${newFilePath}`)
+                updateRedirects("/" + item.file.replace("content\\", "").replace("\\", "/"), "/" + newFilePath.replace("content\\", "").replace("\\", "/"));
+                modifyCount++
+
                 fs.renameSync(item.file, newFilePath)
                 // TODO: search through all files and edit any references to this file
             }
         })
     })
+
+    if (modifyCount) {
+        console.log(`❗ Modified ${modifyCount} files.`)
+    } else {
+        console.log("✅ No files modified!")
+    }
 }
 
 main()
