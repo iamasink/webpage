@@ -13,6 +13,7 @@ import rehypeStringify from 'rehype-stringify'
 import rehypePrettyCode from "rehype-pretty-code"
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import rehypeVideo from 'rehype-video'
+import { formatSlug } from './blog'
 
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
@@ -86,5 +87,6 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
 
 
 export function getAllMarkdownSlugs() {
-    return fs.readdirSync(contentDirectory).filter(file => file.endsWith('.md')).filter(file => !file.includes("draft")).map((filename) => filename.replace(/\.md$/, ''))
+    // return fs.readdirSync(contentDirectory).filter(file => file.endsWith('.md')).filter(file => !file.includes("draft")).map((filename) => filename.replace(/\.md$/, ''))
+    return fs.readdirSync(contentDirectory).filter(file => file.endsWith('.md')).filter(file => !file.includes("draft")).map((filename) => formatSlug(filename))
 }

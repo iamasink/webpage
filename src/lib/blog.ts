@@ -11,6 +11,7 @@ export function getPostSlugs() {
 
 export function getPostBySlug(slug: string) {
     const realSlug = slug.replace(/\.md$/, "")
+    // const realSlug = formatSlug(slug)
     const fullPath = join(postsDirectory, `${realSlug}.md`)
     const fileContents = fs.readFileSync(fullPath, "utf8")
     const { data, content } = matter(fileContents)
@@ -26,10 +27,17 @@ export function getAllPosts(): Post[] {
     return posts
 }
 
+export function formatSlug(slug: string) {
+    return slug.replace(/\.md$/, '')
+    // return slug.replace(/\.md$/, '').replace(/(^\d{4}-\d{2}-\d{2})(-\d{1,2})?_\s*(.*)/g, (match, p1, p2, p3) => {
+    //     return `${p1}_${p3}`
+    // })
+}
+
 export function getSortedPostsData() {
     const fileNames = fs.readdirSync(postsDirectory).filter((filename) => filename.endsWith(".md")).filter(file => !file.includes("draft"))
     const allPostsData = fileNames.map((fileName) => {
-        const slug = fileName.replace(/\.md$/, '')
+        const slug = formatSlug(fileName)
 
         // read markdown file as string
         const fullPath = path.join(postsDirectory, fileName)
