@@ -10,6 +10,7 @@ import { useState } from "react"
 import CopyableText from "@/components/CopyableText"
 import Clock from "@/components/Clock"
 import DiscordStatus from "@/components/DiscordStatus"
+import SlateBackground from "@/components/SlateBackground"
 
 export default function Home() {
 	return (
@@ -107,6 +108,13 @@ export default function Home() {
 							/>
 						</div>
 					</div>
+
+					{/* <SlateBackground> */}
+					<p className="mx-5 px-2 py-3 border-rose-800 border-2 rounded-2xl bg-slate-800">
+						Check out <a className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">oomf!!!!!</a>
+					</p>
+					{/* </SlateBackground> */}
+
 				</div>
 			</main >
 		</div >
