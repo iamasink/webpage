@@ -111,9 +111,9 @@ export default function Home() {
 
 					{/* <SlateBackground> */}
 					<p className="mx-5 px-2 py-3 border-rose-800 border-2 rounded-2xl bg-slate-800">
-						<span>I'm not very interesting so theres not much here..</span>
+						<span>I&apos;m not very interesting so theres not much here..</span>
 						<br />
-						<span>why don't you check out <a className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">oomfie!!!!!</a></span>
+						<span>why don&apos;t you check out <a className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">oomf</a></span>
 						<br />
 						<span>i will update this page one day.....</span>
 					</p>
