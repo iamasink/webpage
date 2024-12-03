@@ -1,6 +1,6 @@
 ---
 title: Autohotkey
-description: sigh. i dont even know. auto hotkey is awesome!
+description: 
 aliases:
   - autohotkey
   - ahk

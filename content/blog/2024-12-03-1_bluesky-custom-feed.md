@@ -1,6 +1,6 @@
 ---
-title: creating bluesky custom feed, without other tools
-description: 
+title: bluesky custom feed
+description: creating a custom bluesky feed, from scratch
 aliases: 
 tags: 
 date: 2024-12-03T04:02:35+00:00
@@ -99,5 +99,11 @@ probably same as last error?
  or if while testing the manual url, you get this
 ` {"error":"UnsupportedAlgorithm","message":"Unsupported algorithm"}`
   its from having the wrong DID or feed url, basically any part past `feed=` being wrong causes this i think.
+
+> Hmm, some kind of issue occurred when contacting the feed server. Please let the feed owner know about this issue. 
+> Message from server: XRPCNotSupported
+
+probably you pointed to the wrong domain, or are hosting the wrong thing on the port you chose.
+happens to me if i run a nextjs dev server on port 3000 and visit the feed.
 
 [^1]: shortname - i think this is also referred to as the *record name*, but i will just refer to it as shortname. its what shows up in the url if you click on the published feed on your profile, eg in `https://bsky.app/profile/iamas.ink/feed/test2`, its `test2`

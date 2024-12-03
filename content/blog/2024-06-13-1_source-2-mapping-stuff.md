@@ -27,8 +27,7 @@ I believe this can be done AFTER full compile, without re-compiling the map.
 
 or:
 just ignore "Create minimap" use [Radgen](https://developer.valvesoftware.com/wiki/RadGen) [Radgen minimap creation - CS2 Mapping Academy #11 (Counter Strike 2) - YouTube](https://www.youtube.com/watch?v=vDhUOtkXiOM)
-radgen v1.0.0
-![[RadGen_-_v1.0.0.zip]]
+
 
 # console commands 
 commands to quickly test ingame
