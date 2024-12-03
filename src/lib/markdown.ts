@@ -83,18 +83,18 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
         newcontent = newcontent
             .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/><br/><h2 class="sr-only" id="footnote-label">Footnotes</h2>`)
 
-        // process image tags for dimensions
-        const imageTags = newcontent.match(/<img([^>]+)>/g) || []
-        for (const tag of imageTags) {
-            // console.log(`updating image ${tag}`)
-            const srcMatch = tag.match(/src="([^"]+)"/)
-            if (srcMatch && (!/width=/.test(tag) || !/height=/.test(tag))) {
-                const src = decodeURIComponent(srcMatch[1])
-                const { width, height } = await getImageDimensions(path.join(contentDirectory, src))
-                const updatedTag = tag.replace(/<img([^>]+)>/, `<Image $1 width="${width}" height="${height}" />`)
-                newcontent = newcontent.replace(tag, updatedTag)
-            }
-        }
+        // // process image tags for dimensions
+        // const imageTags = newcontent.match(/<img([^>]+)>/g) || []
+        // for (const tag of imageTags) {
+        //     // console.log(`updating image ${tag}`)
+        //     const srcMatch = tag.match(/src="([^"]+)"/)
+        //     if (srcMatch && (!/width=/.test(tag) || !/height=/.test(tag))) {
+        //         const src = decodeURIComponent(srcMatch[1])
+        //         const { width, height } = await getImageDimensions(path.join(contentDirectory, src))
+        //         const updatedTag = tag.replace(/<img([^>]+)>/, `<Image $1 width="${width}" height="${height}" />`)
+        //         newcontent = newcontent.replace(tag, updatedTag)
+        //     }
+        // }
 
         // console.log(newcontent)
         return newcontent
@@ -105,16 +105,16 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
     }
 }
 
-async function getImageDimensions(imagePath: string): Promise<{ width: number, height: number }> {
-    console.log(`getting dimensions for ${imagePath}`)
+// async function getImageDimensions(imagePath: string): Promise<{ width: number, height: number }> {
+//     console.log(`getting dimensions for ${imagePath}`)
 
-    if (!fs.existsSync(imagePath)) return { width: 0, height: 0 }
+//     if (!fs.existsSync(imagePath)) return { width: 0, height: 0 }
 
-    const buffer = await fs.promises.readFile(imagePath)
-    const res = await getImageSize(buffer)
-    console.log(`image size ${imagePath} is ${res.width ? res.width : 0} x ${res.height ? res.height : 0}`)
-    return { width: res.width || 0, height: res.height || 0 }
-}
+//     const buffer = await fs.promises.readFile(imagePath)
+//     const res = await getImageSize(buffer)
+//     console.log(`image size ${imagePath} is ${res.width ? res.width : 0} x ${res.height ? res.height : 0}`)
+//     return { width: res.width || 0, height: res.height || 0 }
+// }
 
 
 
