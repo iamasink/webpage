@@ -80,12 +80,24 @@ notably, the short name / record name must be the same as in the `algos\*whateve
 
 
 # errors i got
-> Hmm, the feed server appears to be misconfigured. Please let the feed owner know about this issue. Message from server: invalid feed generator service details in did document:did:plc:txdeqi6p3r4hdz4ppa7bj5zh   
+> Hmm, the feed server appears to be misconfigured. Please let the feed owner know about this issue. 
+> Message from server: invalid feed generator service details in did document:did:plc:txdeqi6p3r4hdz4ppa7bj5zh   
 
 im pretty sure this error was because i tried using the FEEDGEN_SERVICE_DID and setting it to my account id?
 
-> Hmm, the feed server appears to be misconfigured. Please let the feed owner know about this issue. Message from server: invalid feed generator service   
+> Hmm, the feed server appears to be misconfigured. Please let the feed owner know about this issue. 
+> Message from server: invalid feed generator service   
 
-i think it was from having a different shortname for the published feed as to my shortname in the argos file
+probably same as last error?
 
-[^1]: shortname - i think this is also referred to as the *record name*, but i will just refer to it as shortname. its what shows up in the url if you click on the published feed on your profile, eg in `https://bsky.app/profile/iamas.ink/feed/test2`, the last bit. 
+
+> Hmm, some kind of issue occurred when contacting the feed server. Please let the feed owner know about this issue. 
+> Message from server: Unsupported algorithm
+
+ from having a different shortname for the published feed as to the shortname in the argos file
+ 
+ or if while testing the manual url, you get this
+` {"error":"UnsupportedAlgorithm","message":"Unsupported algorithm"}`
+  its from having the wrong DID or feed url, basically any part past `feed=` being wrong causes this i think.
+
+[^1]: shortname - i think this is also referred to as the *record name*, but i will just refer to it as shortname. its what shows up in the url if you click on the published feed on your profile, eg in `https://bsky.app/profile/iamas.ink/feed/test2`, its `test2`
