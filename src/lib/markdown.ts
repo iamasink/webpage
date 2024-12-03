@@ -61,7 +61,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
                 hrefTemplate: (permalink: string) => permalink,
             }) // WikiLink support
             //
-            .use(remarkRehype, { allowDangerousHtml: true })// Convert Markdown to HTML-compatible AST
+            .use(remarkRehype, { allowDangerousHtml: true }) // Convert Markdown to HTML-compatible AST
             .use(rehypePrettyCode, {
                 theme: "github-dark-dimmed",
                 defaultLang: "plaintext",
