@@ -78,7 +78,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             }) // Serialize HTML
             .process(contentWithLineBreaks)
         return processedContent.toString()
-            .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/>`)
+            .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/><br/><h2 class="sr-only" id="footnote-label">Footnotes</h2>`)
     } catch (error) {
         console.error('Error reading file:', error)
         return null
