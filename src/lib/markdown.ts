@@ -79,6 +79,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             .process(contentWithLineBreaks)
         return processedContent.toString()
             .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/><br/><h2 class="sr-only" id="footnote-label">Footnotes</h2>`)
+            .replace(`<img`, `<Image`)
     } catch (error) {
         console.error('Error reading file:', error)
         return null
