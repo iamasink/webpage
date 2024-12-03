@@ -16,17 +16,25 @@ const CopyableText: React.FC<CopyableTextProps> = ({
 	copymessage = "Copied!",
 }) => {
 	const [tooltip, setTooltip] = useState(message)
+	const handleCopy = () => {
+		setTooltip(copymessage)
+		navigator.clipboard.writeText(text)
+
+		setTimeout(() => {
+			setTooltip(message)
+		}, 2500)
+	}
 
 	return (
 		<span
-			onClick={() => {
-				setTooltip(copymessage)
-				navigator.clipboard.writeText(text)
-
-				setTimeout(() => {
-					setTooltip(message)
-				}, 2500)
+			role="button"
+			tabIndex={0}
+			aria-label="Copy text"
+			onClick={handleCopy}
+			onKeyDown={(e) => {
+				if (e.key === "Enter" || e.key === " ") handleCopy()
 			}}
+			style={{ cursor: "pointer" }}
 		>
 			<Tooltip message={tooltip}>{text}</Tooltip>
 		</span>

@@ -1,5 +1,5 @@
 import { Post } from "@/interfaces/post"
-import fs from "fs"
+import fs, { existsSync } from "fs"
 import matter from "gray-matter"
 import path, { join } from "path"
 
@@ -13,19 +13,26 @@ export function getPostBySlug(slug: string) {
     const realSlug = slug.replace(/\.md$/, "")
     // const realSlug = formatSlug(slug)
     const fullPath = join(postsDirectory, `${realSlug}.md`)
-    const fileContents = fs.readFileSync(fullPath, "utf8")
-    const { data, content } = matter(fileContents)
+    if (existsSync(fullPath)) {
+        const fileContents = fs.readFileSync(fullPath, "utf8")
+        const { data, content } = matter(fileContents)
+        // console.log(data)
 
-    return { ...data, slug: realSlug, content } as Post
+        return { ...data, slug: realSlug, content } as Post
+    } else {
+        return null
+    }
 }
 
 export function getAllPosts(): Post[] {
     const slugs = getPostSlugs()
     const posts = slugs
         .map((slug) => getPostBySlug(slug))
+        .filter((post): post is Post => post !== null) // type guard filter
         .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
     return posts
 }
+
 
 export function formatSlug(slug: string) {
     return slug.replace(/\.md$/, '')

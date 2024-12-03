@@ -11,16 +11,32 @@ import CopyableText from "@/components/CopyableText"
 import Clock from "@/components/Clock"
 import DiscordStatus from "@/components/DiscordStatus"
 import SlateBackground from "@/components/SlateBackground"
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+	title: 'iamasink - home',
+	description: "sinks's homepage",
+	referrer: 'origin-when-cross-origin',
+	keywords: ['iamasink', 'links', 'homepage'],
+	authors: [{ name: "Lily" }],
+	creator: 'iamasink',
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+}
+
+import type { Viewport } from 'next'
+export const viewport: Viewport = {
+	themeColor: 'black',
+}
+
 
 export default function Home() {
 	return (
 		<div>
-			<Head>
-				<title>iamasink</title>
-				<meta name="description" content="iamasink's homepage" />
-				<meta property="og:title" content="iamasink" />
-				<meta property="og:description" content="iamasink's homepage" />
-			</Head>
 			<main className="flex min-h-screen flex-col items-center pt-24">
 				<div className="">
 					<div className="items-top flex">
@@ -113,7 +129,7 @@ export default function Home() {
 					<p className="mx-5 px-2 py-3 border-rose-800 border-2 rounded-2xl bg-slate-800">
 						<span>I&apos;m not very interesting so theres not much here..</span>
 						<br />
-						<span>why don&apos;t you check out <a className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">oomf</a></span>
+						<span>why don&apos;t you check out <a title="link to snailhands.neocities.org" className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">oomf</a></span>
 						<br />
 						<span>i will update this page one day.....</span>
 					</p>

@@ -14,6 +14,7 @@ const MarkdownText: React.FC<MarkdownTextProps> = async ({
 }) => {
     const content = await getMarkdownContent(slug)
     const post = getPostBySlug(slug)
+    if (!post) notFound()
     const date = post.date
     const title = post.title
     const a = post.description
