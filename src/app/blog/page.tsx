@@ -19,11 +19,13 @@ export default async function Home() {
                             <hr className="border-rose-800" />
                         </div>
                         <ul className="">
-                            {allPosts.map(({ slug, title, date }) => (
+                            {allPosts.map(({ slug, title, date, description
+                            }) => (
                                 // each link:
-                                <li className="my-1" key={slug}>
+                                <li className="my-2" key={slug}>
                                     <Link href={`/blog/${slug}`}>
                                         <h2><span className="font-mono">{date.toISOString().split("T")[0]}</span> - {title}</h2>
+                                        <p className="ml-[6.5rem] text-gray-100 font-thin">{description}</p>
                                     </Link>
                                     <p>{ }</p>
                                 </li>
