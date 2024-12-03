@@ -14,6 +14,7 @@ import rehypePrettyCode from "rehype-pretty-code"
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import rehypeVideo from 'rehype-video'
 import { formatSlug } from './blog'
+import { getImageSize } from 'next/dist/server/image-optimizer'
 
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
@@ -24,7 +25,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
         if (!fs.existsSync(filePath)) {
             return null // Return null if the file doesn't exist
         }
-        const fileContent = fs.readFileSync(filePath, 'utf8')
+        const fileContent = await fs.promises.readFile(filePath, 'utf8')
 
         // Replace image paths with the correct URL
         const updatedContent = fileContent.replace(/!\[\[(Attachments\/)?([^\]]+)\]\]/g, (match, p1, p2) => {
@@ -77,14 +78,44 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
                 allowDangerousHtml: true
             }) // Serialize HTML
             .process(contentWithLineBreaks)
-        return processedContent.toString()
+        let newcontent = processedContent.toString()
+
+        newcontent = newcontent
             .replace(`<h2 class="sr-only" id="footnote-label">Footnotes</h2>`, `<hr/><br/><h2 class="sr-only" id="footnote-label">Footnotes</h2>`)
-            .replace(`<img`, `<Image`)
+
+        // process image tags for dimensions
+        const imageTags = newcontent.match(/<img([^>]+)>/g) || []
+        for (const tag of imageTags) {
+            // console.log(`updating image ${tag}`)
+            const srcMatch = tag.match(/src="([^"]+)"/)
+            if (srcMatch && (!/width=/.test(tag) || !/height=/.test(tag))) {
+                const src = decodeURIComponent(srcMatch[1])
+                const { width, height } = await getImageDimensions(path.join(contentDirectory, src))
+                const updatedTag = tag.replace(/<img([^>]+)>/, `<Image $1 width="${width}" height="${height}" />`)
+                newcontent = newcontent.replace(tag, updatedTag)
+            }
+        }
+
+        // console.log(newcontent)
+        return newcontent
+
     } catch (error) {
         console.error('Error reading file:', error)
         return null
     }
 }
+
+async function getImageDimensions(imagePath: string): Promise<{ width: number, height: number }> {
+    console.log(`getting dimensions for ${imagePath}`)
+
+    if (!fs.existsSync(imagePath)) return { width: 0, height: 0 }
+
+    const buffer = await fs.promises.readFile(imagePath)
+    const res = await getImageSize(buffer)
+    console.log(`image size ${imagePath} is ${res.width ? res.width : 0} x ${res.height ? res.height : 0}`)
+    return { width: res.width || 0, height: res.height || 0 }
+}
+
 
 
 export function getAllMarkdownSlugs() {
