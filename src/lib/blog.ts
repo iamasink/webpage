@@ -58,8 +58,8 @@ export function getSortedPostsData() {
         return {
             slug,
             ...matterData,
-        }
+        } as Post
     })
     // Sort posts by date
-    return allPostsData.sort((a, b) => ((b as any).date - (a as any).date)) as Post[]
+    return allPostsData.sort((a, b) => (-1 * a.slug.localeCompare(b.slug)))
 }
