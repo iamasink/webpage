@@ -14,7 +14,12 @@ import rehypePrettyCode from "rehype-pretty-code"
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import rehypeVideo from 'rehype-video'
 import { formatSlug } from './blog'
-import { getImageSize } from 'next/dist/server/image-optimizer'
+// import { getImageSize } from 'next/dist/server/image-optimizer'
+import { promisify } from 'util'
+import { imageSize } from 'image-size'
+
+
+
 
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
@@ -108,10 +113,8 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
 async function getImageDimensions(imagePath: string): Promise<{ width: number, height: number }> {
     console.log(`getting dimensions for ${imagePath}`)
 
-    if (!fs.existsSync(imagePath)) return { width: 0, height: 0 }
-
-    const buffer = await fs.promises.readFile(imagePath)
-    const res = await getImageSize(buffer)
+    // if (!fs.existsSync(imagePath)) return { width: 0, height: 0 }
+    const res = await imageSize(imagePath)
     console.log(`image size ${imagePath} is ${res.width ? res.width : 0} x ${res.height ? res.height : 0}`)
     return { width: res.width || 0, height: res.height || 0 }
 }
