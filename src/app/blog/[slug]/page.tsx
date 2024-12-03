@@ -56,7 +56,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     if (existingPost) {
         return (
             <OuterPage>
-                <div className='flex justify-center'>
+                <div className='flex justify-center break-words'>
                     <SlateBackground>
                         <div>
                             <Link className="m-0 text-rose-600" href="/blog">← Go Back</Link>

@@ -71,12 +71,12 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             .use(rehypePrettyCode, {
                 theme: "github-dark-dimmed",
                 defaultLang: "plaintext",
-                // transformers: [
-                //     transformerCopyButton({
-                //         visibility: 'hover',
-                //         feedbackDuration: 3_000,
-                //     }),
-                // ],
+                transformers: [
+                    transformerCopyButton({
+                        visibility: 'hover',
+                        feedbackDuration: 3_000,
+                    }),
+                ],
             })
             .use(rehypeVideo)
             .use(rehypeStringify, {

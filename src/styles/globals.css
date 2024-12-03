@@ -128,13 +128,43 @@ article pre {
 
 /* code blocks */
 pre {
-  overflow-x: auto;
-  padding: 1rem 0;
+  border: #f0beca;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0rem;
 }
 
-pre [data-line] {
-  padding: 0 1rem;
+@media (min-width:800px) {
+  
+  figure[data-rehype-pretty-code-figure] {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+pre {
+  border-radius: 1rem;
 }
+}
+  figure[data-rehype-pretty-code-figure] {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+pre {
+  /* padding-bottom: 10px; */
+    scrollbar-width: thin; /* Use thin scrollbars */
+}
+
+
+pre > code {
+    overflow-x: auto !important;
+    text-wrap: wrap;
+    padding: 1rem;
+}
+pre [data-line] {
+  /* padding: 0 1rem; */
+}
+
+
 code[data-line-numbers] {
   counter-reset: line;
 }
@@ -161,6 +191,7 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 code[data-line-numbers-max-digits="4"] > [data-line]::before {
   width: 2.25rem;
 }
+
 
 
 /*  */
