@@ -1,6 +1,6 @@
 ---
 title: Android Emulators & scrcpy
-description: phone → pc
+description: getting phone stuff on the puter
 aliases: 
 tags:
   - android

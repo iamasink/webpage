@@ -6,7 +6,7 @@ aliases:
 tags:
   - youtube
   - rant
-description: how to be anti-accessible
+description: rant about youtubers using terrible captions
 date: 2024-04-24
 ---
 or; i stupidly rant about youtube captions 

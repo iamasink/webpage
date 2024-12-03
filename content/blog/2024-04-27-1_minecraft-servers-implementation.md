@@ -1,6 +1,6 @@
 ---
 title: Minecraft servers implementation
-description: over 70 minecraft servers..
+description: what i've learned from running over 70 minecraft servers
 aliases:
   - docker-minecraft-server
 tags:

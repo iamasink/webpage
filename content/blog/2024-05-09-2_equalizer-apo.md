@@ -1,6 +1,6 @@
 ---
 title: Equalizer APO
-description: wee audio
+description: 
 aliases:
   - eq
 tags:
