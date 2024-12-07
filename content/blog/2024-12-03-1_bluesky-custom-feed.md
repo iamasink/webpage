@@ -1,6 +1,6 @@
 ---
 title: bluesky custom feed
-description: creating a custom bluesky feed, from scratch
+description: creating a custom bluesky feed, with typescript
 aliases: 
 tags: 
 date: 2024-12-03T04:02:35+00:00
@@ -107,3 +107,13 @@ probably you pointed to the wrong domain, or are hosting the wrong thing on the 
 happens to me if i run a nextjs dev server on port 3000 and visit the feed.
 
 [^1]: shortname - i think this is also referred to as the *record name*, but i will just refer to it as shortname. its what shows up in the url if you click on the published feed on your profile, eg in `https://bsky.app/profile/iamas.ink/feed/test2`, its `test2`
+
+
+
+
+
+# actually making a feed
+i wanted to see if it was possible to create a feed that was all custom domain handles..
+unfortunately the firehose doesn't return the handle, only the DID so i have to resolve the handle for every single post..
+so i'll just keep a cache of users that have been resolved so i can slightly reduce the load,  surely it'll be fine...
+it hasn't caused any issues so far but i imagine if i run it for longer (days+) then it will have some issues.

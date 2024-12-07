@@ -55,6 +55,19 @@ this previous thing doesn't work.
 
 i will try changing the last send to SendInput, but i doubt that'll do anything as they should be synonymous
 
+
+
+## **Update, solved!! solution:**
+All above is wrong! It's other hotkeys that can affect this. 
+example
+```ahk
+Send("!+{F1}")
+; change to:..
+Send("{Shift Down}{Alt Down}{F1}{Shift Down}{Alt Down}")
+```
+this should fix the issue with hotkeys like Shift & CapsLock::Delete
+
+
 # multi monitor stuff
 I wanted a way to be able to switch the currently enabled monitors. This seems like it should be really easy to achieve with autohotkey or even some software out there. 
 Apparently im weird (wow, news to me!! /j) and this is some really obscure thing?!?!
