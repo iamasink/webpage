@@ -12,6 +12,6 @@ export function Button8831({
 }: Props) {
     if (!alt) alt = link
     return (
-        <Link href={link}><Image width={88} height={31} alt="eightyeightthirtyone" src={src} /></Link>
+        <Link href={link}><img width={88} height={31} alt={alt} src={src} /></Link>
     )
 }
