@@ -12,7 +12,7 @@ import Clock from "@/components/Clock"
 import DiscordStatus from "@/components/DiscordStatus"
 import SlateBackground from "@/components/SlateBackground"
 import type { Metadata } from 'next'
-
+import Script from 'next/script'
 
 export const metadata: Metadata = {
 	title: 'iamasink - home',
@@ -39,7 +39,7 @@ export const viewport: Viewport = {
 export default function Home() {
 	return (
 		<div>
-			<script src="./oneko.js"></script>
+			<Script src="./oneko.js"></Script>
 			<main className="flex min-h-screen flex-col items-center pt-24">
 				<div className="">
 					<div className="items-top flex">
