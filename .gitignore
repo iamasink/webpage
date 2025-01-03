@@ -41,6 +41,9 @@ next-env.d.ts
 # other stuff
 public/Attachments/
 *- Copy/
+*-old/
+*-old
 *.bak
 public/robots.txt
 public/sitemap*.xml
+

@@ -57,7 +57,7 @@ export default function Home() {
 
 
 					<div className="mx-7">
-						<p className="">My time (<span className="font-mono">Europe/London</span>):</p>
+						<p className="">tenpo mi li (<span className="font-mono">Europe/London</span>):</p>
 						<Clock></Clock>
 					</div>
 					{/* <DiscordStatus></DiscordStatus> */}
@@ -66,27 +66,27 @@ export default function Home() {
 					{/* <SlateBackground> */}
 
 					<div className="mx-7 py-3 pt-5">
-						<span>I&apos;m not very interesting so theres not much here..</span>
+						<span>lipu ni li lili..</span>
 						<br />
-						<span>why don&apos;t you check out <a title="link to snailhands.neocities.org" className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">oomf</a></span>
+						<span>o lukin e lipu ni: <a title="tawa lipu snailhands.neocities.org" className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">lipu pi jan pona</a></span>
 						<br />
-						<span>i will update this page one day.....</span>
+						<span>tenpo kama la mi suli e ni</span>
 						<br />
 						<br />
-						<span>heres a button! feel free to link to me :3</span>
+						<span>nena a! sina ken jasima lon lipu sina!</span>
 						<br />
 						{/* <div className="overflow-scroll w-[81px] h-[31px]"> */}
-						<Copyable message="Click to copy source!" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
+						<Copyable message="o pali la sama" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={81} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>
 						{/* </div> */}
 						<br />
-						<img className="float-right" src="/terriermon-blink.gif" alt="terriermon blinking gif" title="moumantai" width={150} height={0}></img>
+						<img className="float-right" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
 						<br />
 
-						<span>theres more</span>
+						<span>o alasa</span>
 						<br />
-						<Link href="/tok"><img src="/assets/images/o-toki-pona.png"></img></Link>
+						<Link href="/"><img src="/assets/images/o-toki-ike.png"></img></Link>
 					</div>
 
 					{/* </SlateBackground> */}

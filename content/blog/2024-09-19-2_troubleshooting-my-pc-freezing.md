@@ -154,3 +154,6 @@ Which might make sense because I have like too much stuff on one plug socket
 
 ##### 2024-11-03
 Happened while playing satisfactory and watching a youtube video on my other monitor. Sigh.
+
+##### 2025-01-01
+great way to start off the year, crashed playing a random unity game from itch 

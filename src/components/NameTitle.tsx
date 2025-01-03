@@ -7,7 +7,7 @@ const NameTitle: React.FC = ({ }) => {
 				className={`text-transparent `}
 				style={{}}
 			>
-				lillieee
+				iamas.ink
 			</h1>
 			{/* <h2
 				className={`m-0 max-w-[30ch] text-purple-500 transition-all group-hover:-translate-x-[70px] group-hover:text-transparent`}
