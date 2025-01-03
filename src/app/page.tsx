@@ -75,13 +75,19 @@ export default function Home() {
 						<br />
 						<span>heres a button! feel free to link to me :3</span>
 						<br />
-						{/* <div className="overflow-scroll w-[81px] h-[31px]"> */}
+						<img className="float-right" src="/terriermon-blink.gif" alt="terriermon blinking gif" title="moumantai" width={150} height={0}></img>
+						{/* <div className="overflow-scroll w-[88px] h-[31px]"> */}
 						<Copyable message="Click to copy source!" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
-							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={81} height={31} style={{ imageRendering: "pixelated" }}></img>
+							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>
 						{/* </div> */}
 						<br />
-						<img className="float-right" src="/terriermon-blink.gif" alt="terriermon blinking gif" title="moumantai" width={150} height={0}></img>
+						<br />
+						<span>some cool sites</span>
+						<div className="flex">
+							<a href="https://dimden.dev/"><img width={88} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a>
+							<a href="https://eightyeightthirty.one/"><Image width={88} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a>
+						</div>
 						<br />
 
 						<span>theres more</span>

@@ -83,6 +83,14 @@ export default function Home() {
 						<br />
 						<img className="float-right" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
 						<br />
+						<span>lipu pona</span>
+						<br />
+
+						<div className="flex">
+							<a href="https://dimden.dev/"><img width={81} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a>
+							<a href="https://eightyeightthirty.one/"><Image width={81} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a>
+						</div>
+						<br />
 
 						<span>o alasa</span>
 						<br />
