@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'iamasink - blog',
-    description: "all posts on sinks's blog",
+    description: "all posts on sink's blog",
 
 }
 export default async function Home() {
