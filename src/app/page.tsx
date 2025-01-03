@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 import type { Viewport } from 'next'
 import Copyable from "@/components/Copyable"
 import Link from "next/link"
+import { Button8831 } from "@/components/Button8831"
 export const viewport: Viewport = {
 	themeColor: 'black',
 }
@@ -85,8 +86,10 @@ export default function Home() {
 						<br />
 						<span>some cool sites</span>
 						<div className="flex">
-							<a href="https://dimden.dev/"><img width={88} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a>
-							<a href="https://eightyeightthirty.one/"><Image width={88} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a>
+							{/* <a href="https://dimden.dev/"><img width={88} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a> */}
+							{/* <a href="https://eightyeightthirty.one/"><Image width={88} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a> */}
+							<Button8831 link="https://dimden.dev/" alt="dimden.dev" src="https://dimden.dev/services/images/88x31.gif" ></Button8831>
+							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/button/88x31.png" ></Button8831>
 						</div>
 						<br />
 

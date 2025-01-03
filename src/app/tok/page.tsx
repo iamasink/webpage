@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 import type { Viewport } from 'next'
 import Copyable from "@/components/Copyable"
 import Link from "next/link"
+import { Button8831 } from "@/components/Button8831"
 export const viewport: Viewport = {
 	themeColor: 'black',
 }
@@ -75,20 +76,21 @@ export default function Home() {
 						<br />
 						<span>nena a! sina ken jasima lon lipu sina!</span>
 						<br />
-						{/* <div className="overflow-scroll w-[81px] h-[31px]"> */}
-						<Copyable message="o pali la sama" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
-							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={81} height={31} style={{ imageRendering: "pixelated" }}></img>
+						<img className="float-right" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
+						{/* <div className="overflow-scroll w-[88px] h-[31px]"> */}
+						<Copyable message="o pali la sama tawa lipu sina" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
+							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>
 						{/* </div> */}
 						<br />
-						<img className="float-right" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
 						<br />
 						<span>lipu pona</span>
-						<br />
 
 						<div className="flex">
-							<a href="https://dimden.dev/"><img width={81} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a>
-							<a href="https://eightyeightthirty.one/"><Image width={81} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a>
+							{/* <a href="https://dimden.dev/"><img width={88} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a> */}
+							{/* <a href="https://eightyeightthirty.one/"><Image width={88} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a> */}
+							<Button8831 link="https://dimden.dev/" alt="dimden.dev" src="https://dimden.dev/services/images/88x31.gif" ></Button8831>
+							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/button/88x31.png" ></Button8831>
 						</div>
 						<br />
 
