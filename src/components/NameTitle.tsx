@@ -7,13 +7,13 @@ const NameTitle: React.FC = ({ }) => {
 				className={`text-transparent `}
 				style={{}}
 			>
-				iamas.ink
+				iamasink
 			</h1>
-			{/* <h2
-				className={`m-0 max-w-[30ch] text-purple-500 transition-all group-hover:-translate-x-[70px] group-hover:text-transparent`}
+			<h2
+				className={`select-none text-purple-500 group-hover:opacity-100 opacity-0 transition-opacity -translate-x-[73px] align-bottom`}
 			>
 				.
-			</h2> */}
+			</h2>
 		</div>
 	)
 }
