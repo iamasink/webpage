@@ -96,7 +96,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             if (srcMatch && (!/width=/.test(tag) || !/height=/.test(tag))) {
                 const src = decodeURIComponent(srcMatch[1])
                 const { width, height } = await getImageDimensions(path.join(contentDirectory, src))
-                const updatedTag = tag.replace(/<img([^>]+)>/, `<Image $1 width="${width}" height="${height}" />`)
+                const updatedTag = tag.replace(/<img([^>]+)>/, `<img $1 width="${width}" height="${height}" />`)
                 newcontent = newcontent.replace(tag, updatedTag)
             }
         }

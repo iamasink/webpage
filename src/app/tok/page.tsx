@@ -87,8 +87,6 @@ export default function Home() {
 						<span>lipu pona</span>
 
 						<div className="flex">
-							{/* <a href="https://dimden.dev/"><img width={88} height={31} src="https://dimden.dev/services/images/88x31.gif" /></a> */}
-							{/* <a href="https://eightyeightthirty.one/"><Image width={88} height={31} alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" /></a> */}
 							<Button8831 link="https://dimden.dev/" alt="dimden.dev" src="https://dimden.dev/services/images/88x31.gif" ></Button8831>
 							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" ></Button8831>
 						</div>
@@ -96,7 +94,9 @@ export default function Home() {
 
 						<span>o alasa</span>
 						<br />
-						<Link href="/"><img src="/assets/images/o-toki-ike.png"></img></Link>
+						<div className="flex">
+							<Link href="/" ><img alt="sitelen pona glyphs reading: 'o toki ike'" src="/assets/images/o-toki-ike.png"></img></Link>
+						</div>
 					</div>
 
 					{/* </SlateBackground> */}

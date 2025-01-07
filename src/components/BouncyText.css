@@ -1,0 +1,44 @@
+.bouncy-text {
+    display: inline-block;
+}
+
+.bouncy-letter {
+    display: inline-block;
+    animation: none;
+}
+
+.bouncy-text.hover-only .bouncy-letter.hovered {
+    animation: bounce 1s;
+    animation-iteration-count: 2;
+}
+
+.bouncy-text.slight-bounce .bouncy-letter {
+    animation: slightBounce 3s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes slightBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(1px);
+    }
+    75% {
+        transform: translateY(-1px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bouncy-letter {
+        animation: none !important;
+    }
+}

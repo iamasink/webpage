@@ -29,7 +29,7 @@ const CopyableText: React.FC<CopyableTextProps> = ({
 		<span
 			role="button"
 			tabIndex={0}
-			aria-label="Copy text"
+			aria-label={`${text}. Copy text`}
 			onClick={handleCopy}
 			onKeyDown={(e) => {
 				if (e.key === "Enter" || e.key === " ") handleCopy()
