@@ -24,7 +24,7 @@ const SocialLinkSmall: React.FC<SocialLinkProps> = ({ href, src, alt, newtab = f
 			rel={rel}
 		>
 			<div className="flex aspect-square border-gray-100 p-1 transition-transform group-hover:-translate-y-1">
-				<Image
+				<img
 					className="inline-block object-center align-middle"
 					src={src}
 					alt={alt}

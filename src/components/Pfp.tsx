@@ -6,11 +6,11 @@ interface PfpProps {
 	tooltip?: boolean
 }
 
-const alt = "pfp art by shioneko114"
+const hovermsg = "pfp art by shioneko114"
 const ttooltip = (<div className="">
 	<span className="absolute left-1/2 top-8 -translate-x-1/2 scale-0 transform whitespace-nowrap rounded bg-gradient-to-br from-pink-950 to-pink-500 bg-[length:400px_200px] p-2 text-xs text-white opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100">
 		<a draggable="true" target="_blank" rel="noopener noreferrer" href="https://twitter.com/shioneko114/status/1695414505151635514">
-			{alt}
+			{hovermsg}
 		</a>
 	</span>
 </div>)
@@ -25,7 +25,7 @@ const Pfp: React.FC<PfpProps> = ({ size = 200, tooltip = true }) => {
 			<div className="group relative inline-block">
 				<Image
 					src="/pfp.png"
-					alt={alt}
+					alt="profile picture"
 					draggable={false}
 					width={size}
 					height={size}

@@ -31,7 +31,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 		>
 			<div className="flex h-full px-2 ">
 				<div className="flex aspect-square items-center border-gray-100 p-1 align-middle transition-transform group-hover:translate-x-3">
-					<Image
+					<img
 						className="inline-block object-center align-middle"
 						src={src}
 						alt=""
