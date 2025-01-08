@@ -5,11 +5,14 @@ import Link from "next/link"
 import Header from "@/components/Header"
 import BouncyText from "@/components/BouncyText"
 
+
+
 export default function Home() {
 	return (
 		<div>
+			<title>elsewhere..</title>
 			<main className="flex min-h-screen flex-col items-center pt-24">
-				<div className="mx-7 py-3 pt-5">
+				<div className="mx-7 py-3 pt-5 centered-main">
 					<BouncyText>I&apos;m not very interesting so theres not much here..</BouncyText>
 					<br />
 					{/*  translucent unless hovered */}
@@ -18,7 +21,7 @@ export default function Home() {
 					<br />
 					<img className="float-right" src="/place_him2.png"></img>
 					<br />
-
+					<Link href="/elsewhere/meow"><img src="/assets/images/kb/pfp_flashback_hapi.png" width={150} height={150}></img></Link>
 					<br />
 					<Link className="textlink" href="/"> go back</Link>
 				</div>

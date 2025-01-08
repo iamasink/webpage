@@ -10,7 +10,10 @@ const NameTitle: React.FC = ({ }) => {
 				iamasink
 			</h1>
 			<h2
-				className={`select-none text-purple-500 group-hover:opacity-100 opacity-0 transition-opacity -translate-x-[73px] align-bottom`}
+				className={` select-none text-purple-800 group-hover:opacity-75 opacity-0 transition-opacity -translate-x-[73px] align-bottom`}
+				style={{
+					transition: "0.5s ease-in-out",
+				}}
 			>
 				.
 			</h2>

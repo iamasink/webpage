@@ -238,3 +238,14 @@ span.hoverinfo {
   text-decoration-style: dashed;
   cursor: help;
 }
+
+
+
+
+
+.centered-main {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 400px;
+}

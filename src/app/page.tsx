@@ -69,7 +69,7 @@ export default function Home() {
 
 					{/* <SlateBackground> */}
 
-					<div className="mx-7 py-3 pt-5">
+					<div className="mx-7 py-3 pt-5 centered-main">
 						<span>I&apos;m not very interesting so theres not much here..</span>
 						<br />
 						<span>why don&apos;t you check out <a title="link to snailhands.neocities.org" className="textlink" href="https://snailhands.neocities.org/">oomf</a></span>
