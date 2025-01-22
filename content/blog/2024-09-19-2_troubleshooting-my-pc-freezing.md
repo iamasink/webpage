@@ -157,3 +157,7 @@ Happened while playing satisfactory and watching a youtube video on my other mon
 
 ##### 2025-01-01
 great way to start off the year, crashed playing a random unity game from itch 
+
+
+2025-01-17
+crashed on fortnite lobby lol

@@ -13,17 +13,20 @@ export default function Home() {
 			<title>elsewhere..</title>
 			<main className="flex min-h-screen flex-col items-center pt-24">
 				<div className="mx-7 py-3 pt-5 centered-main">
-					<BouncyText>I&apos;m not very interesting so theres not much here..</BouncyText>
+					<BouncyText>Theres not much here yet...</BouncyText>
 					<br />
 					{/*  translucent unless hovered */}
 					<small className="opacity-40 hover:opacity-100 transition-opacity duration-300">I guess you can visit my <Link className="textlink" href="/blog">blog</Link>..</small>
 					<br />
 					<br />
-					<img className="float-right" src="/place_him2.png"></img>
+					<img className="float-right" src="/place_him2.png" style={{ imageRendering: "pixelated" }}></img>
 					<br />
-					<Link href="/elsewhere/meow"><img src="/assets/images/kb/pfp_flashback_hapi.png" width={150} height={150}></img></Link>
+					<Link href="/elsewhere/meow"><img src="/assets/images/kb/pfp_flashback_hapi.png" width={150} height={150} style={{ imageRendering: "pixelated" }}></img></Link>
 					<br />
 					<Link className="textlink" href="/"> go back</Link>
+					<br />
+					<br />
+					<Link href="/elsewhere/gifs"><img src="/assets/images/mindwave/spr_popup_s1.gif" width={138 * 2} height={101 * 2} style={{ imageRendering: "pixelated" }}></img></Link>
 				</div>
 			</main>
 		</div>

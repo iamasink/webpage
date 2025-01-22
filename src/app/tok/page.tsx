@@ -32,6 +32,7 @@ import type { Viewport } from 'next'
 import Copyable from "@/components/Copyable"
 import Link from "next/link"
 import { Button8831 } from "@/components/Button8831"
+import BouncyText from "@/components/BouncyText"
 export const viewport: Viewport = {
 	themeColor: 'black',
 }
@@ -97,6 +98,16 @@ export default function Home() {
 						<div className="flex">
 							<Link href="/" ><img alt="sitelen pona glyphs reading: 'o toki ike'" src="/assets/images/o-toki-ike.png"></img></Link>
 						</div>
+						<br />
+						<span>o lukin e lipu <a title="bsky.iamas.ink" href="https://bsky.app/profile/iamas.ink" className="textlink">Bluesky</a></span>
+						<br />
+						<span>en lipu <a className="textlink" href="https://github.com/iamasink">Kitupu</a></span>
+						<br />
+						<span><span title="and remember to like subscribe and hit the bell">en lipu </span><a className="textlink" href="https://www.youtube.com/@iamasink">Jutu</a></span>
+						<br />
+						<br />
+						<br />
+						<span>tawa <Link className="textlink" href="/elsewhere"><BouncyText hoverOnly={true}>lipu kin~</BouncyText></Link></span>
 					</div>
 
 					{/* </SlateBackground> */}
