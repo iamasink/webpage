@@ -19,7 +19,8 @@ Before i had my own ""server"" (old pc), i hosted everything on my main pc, and 
 
 # external stuff
 I use cloudflare as both my registrar and for dns stuff. Clients connect to one of my addresses (mc. mc2. mc3..) depending on the server (as i sometimes host multiple). On cloudflare. these are dns-only (non "orange cloud'ed") SRV and A records. The SRV records are \_minecraft.\_tcp.mc which targets mc.iamas.ink, duplicated with "mc" changed to "mc2"/"mc3".
-these target the A record, which points to my IP address, which is being updated (when it rarely changes) using [cloudflare-ddns](https://github.com/timothymiller/cloudflare-ddns).
+these target the A record, which points to my IP address, which is being updated (when it rarely changes) ~~using [timothymiller/cloudflare-ddns](https://github.com/timothymiller/cloudflare-ddns)~~ 
+(update 2025-02-01: i suggest using this instead [favonia/cloudflare-ddns](https://github.com/favonia/cloudflare-ddns))
 # internal stuff
 after cloudflare, the requests come to my ip, which has 25565 port forwarded to my server machine, which runs [itzg/mc-router](https://github.com/itzg/mc-router) in docker, alongside a minecraft server using [itzg/docker-minecraft-server](https://github.com/itzg/docker-minecraft-server). 
 mc-router then routes the connection to either that server in docker, or the local ip for my main pc. the reason i need to use mc-router here is because these domains all use the same port, and i don't think theres any easy way to do this otherwise.

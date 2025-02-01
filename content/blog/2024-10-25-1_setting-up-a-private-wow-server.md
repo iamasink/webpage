@@ -50,7 +50,7 @@ account create <user> <password>
 
 # Setting the realmlist for the server
 Using a MySQL browser, for example [HeidiSQL](github.com/HeidiSQL/HeidiSQL), navigate to `acore_auth` then the table `realmlist`. Set `address` to your Public IP / domain name.
-If you're using cloudflare, create a DNS only (grey cloud) "A" record to your IP, you can use something such as [Cloudflare DDNS](https://github.com/timothymiller/cloudflare-ddns) to automatically update the address in cloudflare if you have a dynamic IP address.
+If you're using cloudflare, create a DNS only (grey cloud) "A" record to your IP, you can use something such as [Cloudflare DDNS](https://github.com/favonia/cloudflare-ddns) to automatically update the address in cloudflare if you have a dynamic IP address.
 
 # Setting the realmlist for the client(s)
 Everyone needs to adjust their `./WTF/Config.wtf` in their Wow game folder and set the realmList to the IP/domain you use.
