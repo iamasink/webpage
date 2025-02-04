@@ -4,6 +4,8 @@ import { getSortedPostsData } from "@/lib/blog"
 import SlateBackground from "@/components/SlateBackground"
 import type { Metadata } from 'next'
 import generateRssFeed from "@/lib/rss"
+import CopyableText from "@/components/CopyableText"
+import Copyable from "@/components/Copyable"
 
 
 export const metadata: Metadata = {
@@ -25,6 +27,7 @@ export default async function Home() {
                     <div className=''>
                         <h1 className=" text-4xl">Blog</h1>
                         {/* <p className="">if something is really broken, visit the <Link className="text-rose-800 underline" href="https://q.iamas.ink/">old blog</Link>.</p> */}
+                        <p>There is an rss feed available at <Copyable text="https://iamas.ink/rss.xml"><span className="text-rose-800">https://iamas.ink/rss.xml</span></Copyable></p>
                         <div className="py-4 -mx-2 min-[800px]:-mx-10"> {/* Negative margin to offset padding */}
                             <hr className="border-rose-800" />
                         </div>
