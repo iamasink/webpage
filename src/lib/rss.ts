@@ -1,14 +1,15 @@
 
+import { Post } from "@/interfaces/post"
 import fs from "fs"
 import RSS from "rss"
 
-export default async function generateRssFeed(allPosts: any[]) {
+export default async function generateRssFeed(allPosts: Post[]) {
     const site_url =
         process.env.NODE_ENV === "production"
             ? "https://iamas.ink"
             : "http://localhost:3000"
 
-    const feedOptions = {
+    const feedOptions: RSS.FeedOptions = {
         title: "Blog posts | RSS Feed",
         description: "iamas.ink/blog",
         site_url: site_url,
@@ -22,10 +23,11 @@ export default async function generateRssFeed(allPosts: any[]) {
 
     // Add each individual post to the feed.
     allPosts.map((post) => {
+        console.log(post)
         feed.item({
             title: post.title,
-            description: post.excerpt,
-            url: `${site_url}/posts/${post.slug}`,
+            description: `${post.description || ""}`,
+            url: `${site_url}/blog/${post.slug}`,
             date: post.date,
         })
     })
