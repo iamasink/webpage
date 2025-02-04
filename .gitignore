@@ -46,4 +46,4 @@ public/Attachments/
 *.bak
 public/robots.txt
 public/sitemap*.xml
-
+public/rss.xml

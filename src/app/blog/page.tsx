@@ -3,6 +3,7 @@ import OuterPage from "@/components/OuterPage"
 import { getSortedPostsData } from "@/lib/blog"
 import SlateBackground from "@/components/SlateBackground"
 import type { Metadata } from 'next'
+import generateRssFeed from "@/lib/rss"
 
 
 export const metadata: Metadata = {
@@ -10,8 +11,12 @@ export const metadata: Metadata = {
     description: "all posts on sink's blog",
 
 }
+
+
 export default async function Home() {
     const allPosts = getSortedPostsData()
+    await generateRssFeed(allPosts)
+
 
     return (
         <OuterPage>
@@ -42,3 +47,13 @@ export default async function Home() {
         </OuterPage>
     )
 }
+
+// ensure this isn't tried to be generated dynamically.
+export const dynamic = 'force-static'
+
+/*
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+    true (default): Dynamic segments not included in generateStaticParams are generated on demand.
+    false: Dynamic segments not included in generateStaticParams will return a 404.
+*/
+export const dynamicParams = true
