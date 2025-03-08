@@ -18,9 +18,6 @@ import { formatSlug } from './blog'
 import { promisify } from 'util'
 import { imageSize } from 'image-size'
 
-
-
-
 const contentDirectory = path.join(process.cwd(), 'content', 'blog')
 const attachmentsDirectory = path.join(process.cwd(), 'content', 'blog', 'Attachments')
 
@@ -48,18 +45,23 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             return `![${p2}](/Attachments/${encodeURIComponent(p2)})`
         })
 
-        // fix linebraks
+        console.log(encodeURIComponent(updatedContent))
+
+        // fix line breaks
         const contentWithLineBreaks = updatedContent
-            .split('\n')
-            .map(line => line + '')
-            .join('\n') // Rejoin the lines with newlines
+
+
+        // .split('\n')
+        // .map(line => line + '')
+        // .join('\n') // Rejoin the lines with newlines
+        // .replace(/\n/g, '\n') // Replace escaped newlines with actual newlines
 
         // console.log(updatedContent)
 
         // Process the Markdown content to HTML
         const processedContent = await unified()
             .use(remarkParse) // Parse Markdown to syntax tree
-            .use(remarkBreaks) // Support hard line breaks
+            .use(remarkBreaks) // Convert newlines to line breaks
             .use(remarkGfm) // GitHub Flavored Markdown
             .use(remarkFrontmatter) // Parse frontmatter
             .use(remarkWikiLink, {
@@ -67,6 +69,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
                 hrefTemplate: (permalink: string) => permalink,
             }) // WikiLink support
             //
+            // .use(remarkNewlinesToBrs)
             .use(remarkRehype, { allowDangerousHtml: true }) // Convert Markdown to HTML-compatible AST
             .use(rehypePrettyCode, {
                 theme: "github-dark-dimmed",
@@ -78,9 +81,11 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
                     }),
                 ],
             })
-            .use(rehypeVideo)
             .use(rehypeStringify, {
-                allowDangerousHtml: true
+                allowDangerousHtml: true,
+                handlers: {
+                    break: (_: string) => '  \n\n'
+                }
             }) // Serialize HTML
             .process(contentWithLineBreaks)
         let newcontent = processedContent.toString()
@@ -101,7 +106,7 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
             }
         }
 
-        // console.log(newcontent)
+        console.log(newcontent)
         return newcontent
 
     } catch (error) {

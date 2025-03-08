@@ -101,7 +101,7 @@ export default function Home() {
 						<br />
 						<span>follow me on <a title="bsky.iamas.ink" href="https://bsky.app/profile/iamas.ink" className="textlink">bluesky</a> i guess</span>
 						<br />
-						<span>u can see my terrible code on <a className="textlink" href="https://github.com/iamasink">github</a></span>
+						<span>my terrible code on <a className="textlink" href="https://github.com/iamasink">github</a></span>
 						<br />
 						<span><span title="and remember to like subscribe and hit the bell">subscribe </span><a className="textlink" href="https://www.youtube.com/@iamasink">youtube</a></span>
 						<br />
