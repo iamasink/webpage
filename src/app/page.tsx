@@ -88,7 +88,8 @@ export default function Home() {
 						<br />
 						<span>some cool sites</span>
 						<div className="flex">
-							<Button8831 link="https://dimden.dev/" alt="dimden.dev" src="https://dimden.dev/services/images/88x31.gif" ></Button8831>
+							{/* <Button8831 link="https://dimden.dev/" alt="dimden.dev" src="https://dimden.dev/services/images/88x31.gif" ></Button8831> */}
+							<Button8831 link="https://duck.fyi" alt="duck.fiy" src="https://duck.fyi/buttons/88x31.gif"></Button8831>
 							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" ></Button8831>
 						</div>
 						<br />
