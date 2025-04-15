@@ -38,6 +38,19 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
             address: false,
             telephone: false,
         },
+        openGraph: {
+            title: `${title}`,
+            description: `${description}`,
+            url: `https://iamasink.com/blog/${slug}`,
+            siteName: 'iamasink',
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary',
+            title: `${title}`,
+            description: `${description}`,
+            creator: 'iamasink',
+        },
     }
 }
 

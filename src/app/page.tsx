@@ -16,7 +16,26 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
 	title: 'iamasink - home',
-	description: "sinks's homepage",
+	description: "sink's homepage",
+	openGraph: {
+		title: 'iamasink - home',
+		description: "sink's homepage",
+		url: 'https://iamas.ink/',
+		images: [
+			{
+				url: 'https://iamas.ink/pfp.png',
+				width: 100,
+				height: 100,
+			},
+		],
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary',
+		title: 'iamasink - home',
+		description: "sink's homepage",
+		images: ['https://iamas.ink/pfp.png'],
+	},
 	referrer: 'origin-when-cross-origin',
 	keywords: ['iamasink', 'links', 'homepage'],
 	authors: [{ name: "Lily" }],
