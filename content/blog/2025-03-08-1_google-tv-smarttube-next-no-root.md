@@ -1,8 +1,11 @@
 ---
 title: "Google TV: Installing the SmartTube bridge app without root"
-description: 
-aliases: 
-tags: 
+description: How to set up SmartTube's bridge app
+aliases: |
+    google-tv-smarttube
+    smarttube
+    smarttube-bridge
+tags:
 date: 2025-03-08T06:31:19+00:00
 ---
 When using SmartTube (aka smarttubenext) to use: 
