@@ -10,8 +10,8 @@ date: 2025-03-08T06:31:19+00:00
 ---
 When using SmartTube (aka smarttubenext) to use: 
  - the recommended videos on the google tv home,   
- - use voice search,   
- - or use the YouTube button some remotes have,   
+ - voice search,   
+ - or the YouTube button some remotes have,   
 
 you need to uninstall the default youtube app and replace it with the smarttube bridge app.     
 unfortunately you need root or adb to do this.  

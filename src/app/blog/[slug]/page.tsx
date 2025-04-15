@@ -23,12 +23,12 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     if (!data) return {}
     // fetch title from the frontmatter
     const title = data.title
-    const description = data.description ? data.description : ""
+    const description = data.description ? data.description : "Lily's blog page: " + title
     let pagekeywords = ['iamasink', 'blog', 'blog post']
     pagekeywords = pagekeywords.concat(data.tags)
 
     return {
-        title: `${title} - lily's blog`, description: `${description}`,
+        title: `${title}`, description: `${description}`,
         referrer: 'origin-when-cross-origin',
         keywords: pagekeywords,
         authors: [{ name: "Lily" }],
