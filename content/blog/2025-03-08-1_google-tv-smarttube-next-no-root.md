@@ -5,9 +5,16 @@ aliases:
 tags: 
 date: 2025-03-08T06:31:19+00:00
 ---
-to use the recommended videos on the google tv home, use voice search, and use the YouTube button some remotes have, you need the smarttube bridge app. unfortunately you need root or adb to perform this. adb can be done remotely on a pc if wireless debugging is enabled.
+When using SmartTube (aka smarttubenext) to use: 
+ - the recommended videos on the google tv home,   
+ - use voice search,   
+ - or use the YouTube button some remotes have,   
 
-just open the settings -> system -> developer options -> enable wireless debugging.
+you need to uninstall the default youtube app and replace it with the smarttube bridge app.     
+unfortunately you need root or adb to do this.  
+adb can be done remotely on a pc if wireless debugging is enabled.  
+
+1. just open the settings -> system -> developer options -> enable wireless debugging.
 then you can connect to the ip on screen on a pc using
 ```a /<local ip address>/#red
 adb connect <local ip address>
@@ -29,7 +36,7 @@ adb uninstall com.google.android.youtube.tv
 ```
 \
 \
-then you can install the bridge app on smarttube under 
+2. then you can install the bridge app on smarttube under 
 - Settings -> About -> 'Enable global search'.
 
 - Or you can install the bridge apk remotely by downloading it from here 
