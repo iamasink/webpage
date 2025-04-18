@@ -29,7 +29,7 @@ export default function Home() {
 					<Link href="/elsewhere/gifs"><img src="/assets/images/mindwave/spr_popup_s1.gif" width={138 * 2} height={101 * 2} style={{ imageRendering: "pixelated" }}></img></Link>
 					<br />
 					<br />
-					<img src="catfire.gif" width={384} height={96} />
+					<img src="/catfire.gif" width={384} height={96} />
 				</div>
 			</main>
 		</div>
