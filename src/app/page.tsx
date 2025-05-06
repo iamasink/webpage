@@ -113,7 +113,7 @@ export default function Home() {
 						</div>
 						<br />
 
-						<span>theres more</span>
+						<span>:3</span>
 						<br />
 						<div className="flex">
 							<Link href="/tok" ><img alt="sitelen pona glyphs reading: 'o toki pona'" src="/assets/images/o-toki-pona.png"></img></Link>
