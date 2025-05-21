@@ -14,7 +14,7 @@ export default function Home() {
         <div>
             {/* fade-in background */}
             <motion.div
-                className="absolute inset-0 -z-10"
+                className="fixed inset-0 -z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ ease: 'easeInOut', duration: 5 }}
