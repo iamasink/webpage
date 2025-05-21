@@ -9,7 +9,7 @@ export default function MusicPlayer() {
     const audioRef = useRef<HTMLAudioElement>(null)
     const sliderRef = useRef<HTMLInputElement>(null)
     const [isPlaying, setIsPlaying] = useState<boolean>(true)
-    const [volume, setVolume] = useState<number>(0.5)
+    const [volume, setVolume] = useState<number>(1)
     const [isDragging, setIsDragging] = useState<boolean>(false)
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
@@ -32,8 +32,7 @@ export default function MusicPlayer() {
         const audioElement = audioRef.current
         if (audioElement) {
             audioElement.addEventListener("ended", handleEnded)
-            // setVolume(audioElement.volume)
-            audioElement.volume = volume
+            setVolume(audioElement.volume)
         }
 
         audioElement?.play().catch(() => {
@@ -59,7 +58,7 @@ export default function MusicPlayer() {
             }
             sliderElement?.removeEventListener("wheel", handleVolumeScroll)
         }
-    },)
+    }, [volume])
 
     return (
         <div className="music-player flex">
