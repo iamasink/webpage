@@ -9,7 +9,7 @@ export default function MusicPlayer() {
     const audioRef = useRef<HTMLAudioElement>(null)
     const sliderRef = useRef<HTMLInputElement>(null)
     const [isPlaying, setIsPlaying] = useState<boolean>(true)
-    const [volume, setVolume] = useState<number>(1)
+    const [volume, setVolume] = useState<number>(0.5)
     const [isDragging, setIsDragging] = useState<boolean>(false)
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
@@ -30,10 +30,11 @@ export default function MusicPlayer() {
         }
 
         const audioElement = audioRef.current
-        if (audioElement) {
+        if (!audioElement) return
             audioElement.addEventListener("ended", handleEnded)
-            setVolume(audioElement.volume)
-        }
+        // setVolume(audioElement.volume)
+        audioElement.volume = volume
+
 
         audioElement?.play().catch(() => {
             setIsPlaying(false)
@@ -43,7 +44,6 @@ export default function MusicPlayer() {
 
         const handleVolumeScroll = (event: WheelEvent) => {
             event.preventDefault()
-            if (!audioElement) return
             let newVolume = volume + (event.deltaY < 0 ? 0.05 : -0.05)
             newVolume = Math.max(0, Math.min(1, newVolume))  // Clamp volume between 0 and 1
             setVolume(newVolume)
@@ -53,9 +53,7 @@ export default function MusicPlayer() {
         sliderElement?.addEventListener("wheel", handleVolumeScroll, { passive: false })
 
         return () => {
-            if (audioElement) {
-                audioElement.removeEventListener("ended", handleEnded)
-            }
+            audioElement.removeEventListener("ended", handleEnded)
             sliderElement?.removeEventListener("wheel", handleVolumeScroll)
         }
     }, [volume])
