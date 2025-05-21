@@ -85,6 +85,7 @@ export default function MusicPlayer() {
                         if (audioRef.current) {
                             audioRef.current.volume = newVolume
                         }
+                        setIsPlaying(true)
                     }}
                     style={{ cursor: isDragging ? "grabbing" : "grab" }}
                 />
