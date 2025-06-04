@@ -130,6 +130,16 @@
         "permanent": true
     },
     {
+        "source": "/beatleader",
+        "destination": "https://beatleader.com/u/76561198301681888",
+        "permanent": true
+    },
+    {
+        "source": "/bl",
+        "destination": "https://beatleader.com/u/76561198301681888",
+        "permanent": true
+    },
+    {
         "source": "/twitch",
         "destination": "https://twitch.tv/iamasink",
         "permanent": true
