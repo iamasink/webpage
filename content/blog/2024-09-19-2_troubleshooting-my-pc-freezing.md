@@ -159,5 +159,17 @@ Happened while playing satisfactory and watching a youtube video on my other mon
 great way to start off the year, crashed playing a random unity game from itch 
 
 
-2025-01-17
+##### 2025-01-17
 crashed on fortnite lobby lol
+
+
+
+##### 2025-05-27
+crashed playing planet crafter
+
+actually doing testing for once..
+running OCCT Power stbility test, i get lots of gpu errors
+```
+00:01:05 3D Adaptive - 785808 error(s) found ( GPU #0 - NVIDIA GeForce RTX 2070 SUPER )
+00:01:06 3D Adaptive - 785808 error(s) found ( GPU #0 - NVIDIA GeForce RTX 2070 SUPER )
+```
