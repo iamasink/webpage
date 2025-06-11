@@ -152,7 +152,7 @@ stopping = "§5§lThis server has moved!§r§d\nThe new IP is §2§omc.example.c
 ```
 
 and here's how it looks in-game
-![[Pasted image 20240427090121.png]]
+![Pasted image 20240427090121.png](Attachments/Pasted%20image%2020240427090121.png)
 
 # whitelist
 this may seem obvious, but you should whitelist your private minecraft servers. there are bots that scan for open servers and you may find unwanted visitors. IP addresses are not private information, and there's few enough IPv4's that you can scan every one in less than an hour.

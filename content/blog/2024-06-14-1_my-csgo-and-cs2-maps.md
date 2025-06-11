@@ -29,12 +29,12 @@ My custom nuke map for CS:GO. It was basically (old new) nuke but with many clip
 
 
 # de_yoinking
-![[Untitled.jpg]]
+![Untitled.jpg](Attachments/Untitled.jpg)
 [Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2515182620)
 [Github](https://github.com/iamasink/de_yoinking)
 i worked on this map with [Bearably ](https://github.com/Bearably), who did most of the work past my initial layout devtexture map
 # de_marlowe
-![[Untitled-1.jpg]]
+![Untitled-1.jpg](Attachments/Untitled-1.jpg)
 a recreation of the Marlowe Theatre in Canterbury, England
 [Workshop](https://steamcommunity.com/sharedfiles/filedetails/changelog/1710722078)
 [BSP on github](https://github.com/iamasink/de_marlowe)

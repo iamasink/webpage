@@ -15,14 +15,14 @@ de_nuke_custom ported to CS2 and significantly changed
 
 
 vis bugs
-- [ ] ![[Pasted image 20240620075720.png]]
+- [ ] ![Pasted image 20240620075720.png](Attachments/Pasted%20image%2020240620075720.png)
 - [ ] 
 
 
 # creating garage doors
 for doors that will be visible if they open fully in one func_door
 seperate into multiple parts
-![[Pasted image 20240615053738.png]]
+![Pasted image 20240615053738.png](Attachments/Pasted%20image%2020240615053738.png)
 give all the same name like `garage_door_01`, on the bottom one append the name to have `-bottom`
 change the prop bottom bit to `prop_dynamic` and parent it to the bottom door part
 set the top part's lip to `0`, then subtract the total from each, so the next might be `-16` and so on
@@ -54,12 +54,12 @@ the door rotating Positively, is "Open Backward Only" and vice versa
 
 # skybox stuff
 in `addonname/map`
-![[Pasted image 20240615205433.png]]
+![Pasted image 20240615205433.png](Attachments/Pasted%20image%2020240615205433.png)
 for skybox stuff goes as such
 `prefabs/de_nuke/de_nuke_skybox02/worldnodes`
 NOT `prefabs/maps/prefabs/maps/de_nuke/de_nuke_skybox02/`
 
-![[Attachments/Pasted image 20240615215020.png]]
+![Attachments/Pasted image 20240615215020.png](Attachments/Attachments%2FPasted%20image%2020240615215020.png)
 ???
 Error
 Failed to load file (invalid)!

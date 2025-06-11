@@ -18,7 +18,7 @@ There is a guide to getting it to work on VirtualBox [VirtualBox HowTo | Android
 I left the Video Memory at 33mb and left 3D Acceleration off.
 
 and.. yay! 
-![[Pasted image 20240512165720.png]]
+![Pasted image 20240512165720.png](Attachments/Pasted%20image%2020240512165720.png)
 Though, I doubt the performance will be great without 3D Acceleration. 
 It worked fine setting the Video Memory to 128mb, but 3D Acceleration seemingly can't be enabled with the VboxSVGA adaptor.
 
@@ -42,4 +42,4 @@ The only issue I had with scrcpy was that my phone is 1080x2400, so theres a lot
 Using `adb shell wm size WxH` you can change the resolution on a device. Apparently this may cause issues on some devices, but on mine it works just fine, even changing it to above the device's native resolution.
 For my device, running `adb shell wm size 1350x2400` seems to be good. It has to be ran before scrcpy is started, or it won't realise the resolution has changed (understandably). Interestingly, this allows you to see some sort of overscan?
 Here is my homepage when set to 1080x1081, note the navbar
-![[Pasted image 20240512185655.png]]
+![Pasted image 20240512185655.png](Attachments/Pasted%20image%2020240512185655.png)

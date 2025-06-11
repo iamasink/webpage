@@ -20,12 +20,12 @@ Read about how I use these at [[2024-04-27-1_minecraft-servers-implementation|Mi
 
 # builds
 ## cherry biome :3
-![[2024-04-27_02.36.54.png]]
-![[2024-04-27_02.37.10.png]]
+![2024-04-27_02.36.54.png](Attachments/2024-04-27_02.36.54.png)
+![2024-04-27_02.37.10.png](Attachments/2024-04-27_02.37.10.png)
 
-![[2024-04-27_02.37.18.png]]
-![[2024-04-27_02.37.28.png]]
-![[2024-04-27_02.37.39.png]]
-![[2024-04-27_02.37.57.png]]
+![2024-04-27_02.37.18.png](Attachments/2024-04-27_02.37.18.png)
+![2024-04-27_02.37.28.png](Attachments/2024-04-27_02.37.28.png)
+![2024-04-27_02.37.39.png](Attachments/2024-04-27_02.37.39.png)
+![2024-04-27_02.37.57.png](Attachments/2024-04-27_02.37.57.png)
 this was on a [cobblemon](https://cobblemon.com/en) server i was hosting, and i basically ignored all the pokemon bits and just built stuff instead 😭
 but it was really fun!

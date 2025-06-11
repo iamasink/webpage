@@ -1,0 +1,3 @@
+{	"markdown.copyFiles.destination": {
+        "content/blog/**": "/content/blog/attachments/${fileName}"
+    },}

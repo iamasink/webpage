@@ -115,7 +115,7 @@ but also here:
 No issues since last crash. I am thinking of some dodgy software and drivers I installed for a very old USB device on the 17th. I will use system restore point (for the first time ever!!) to before this was installed, even though I uninstalled it, it could be causing some issue idk. I hope this fixes it.
 I only remembered restore points exist after i looked at my files with wiztree and saw like 50gigs being used by them lol
 
-![[Pasted image 20240919235015.png]]
+![Pasted image 20240919235015.png](Attachments/Pasted%20image%2020240919235015.png)
 
 ##### 00:59
 Well that took like an hour but my PC booted fine so we'll see if the issue persists.

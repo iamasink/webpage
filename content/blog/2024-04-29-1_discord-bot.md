@@ -20,11 +20,11 @@ i think someone just called the bot Wiwwie when i first added openai apis so it 
 some features i really like and that no other bot (that i know) satisfies me/my requirements:
 ## user info
 this command allows me to get as much info as discord gives about a user. it allows me to target a user using the discord commands feature, which supports tags, usernames, ids. there are also options to show different information, originally it was just different images (avatar, local guild avatar and banner) but later i added a way to retrieve known username history from the database.
-![[Pasted image 20240427194713.png]]
+![Pasted image 20240427194713.png](Attachments/Pasted%20image%2020240427194713.png)
 
 
 additionally: whenever a user joins, she shows their information in a staff channel. 
-![[Pasted image 20240427200227.png]]
+![Pasted image 20240427200227.png](Attachments/Pasted%20image%2020240427200227.png)
 
 i'm quite proud of the way this is implemented, as the bot runs a command on its own:
 ```ts
@@ -49,7 +49,7 @@ how it works, is it caches the invites state in the database, and every time som
 once the invite link has been determined, it adds that to the user's information in the database, which can be retrieved with [[#user info]]. this is useful to see who invited a user, especially if they are trolling/breaking rules.
 
 i also created a `/invite create` command, which allows me to generate new invites, and record the name in the database. this is useful to track which invite users used to join, further than just Who invited them. these invites are created by the bot and it prevents duplicates. at some point, i will change the "Invited By" section of user info to show the name of the invite, if the user was invited by Wiwwie.
-![[Pasted image 20240427202231.png]]
+![Pasted image 20240427202231.png](Attachments/Pasted%20image%2020240427202231.png)
 
 
 # older bots
