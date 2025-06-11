@@ -36,7 +36,7 @@ const main = () => {
         updated = updated.replace((/\[\[(\d{4}[-]\d{2}[-]\d{2}[-]\d{1,2}_[a-zA-Z0-9-_]+)\]\]/g, (match, p1) => {
             const fileLinkPath = path.join(process.cwd(), 'content', 'blog', p1 + ".md")
             console.log("replacing in", filename, ": ", fileLinkPath)
-        // console.log(p1)
+            // console.log(p1)
 
             // If the file exists
             if (fs.existsSync(fileLinkPath)) {
