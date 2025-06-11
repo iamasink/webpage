@@ -30,20 +30,23 @@ export async function getMarkdownContent(slug: string): Promise<string | null> {
         const fileContent = await fs.promises.readFile(filePath, 'utf8')
 
         // Replace image paths with the correct URL
-        const updatedContent = fileContent.replace(/!\[\[(Attachments\/)?([^\]]+)\]\]/g, (match, p1, p2) => {
-            console.log(`updating image ${match} - ${p1} - ${p2}`)
-            const imagePath = path.join(attachmentsDirectory, p2)
+        // unused, these will be regular links after running format-links.js
+        // const updatedContent = fileContent.replace(/!\[\[(Attachments\/)?([^\]]+)\]\]/g, (match, p1, p2) => {
+        //     console.log(`updating image ${match} - ${p1} - ${p2}`)
+        //     const imagePath = path.join(attachmentsDirectory, p2)
 
-            // If the image file exists, return the correct public URL
-            if (!fs.existsSync(imagePath)) {
-                console.log(`image ${imagePath} doesnt exist`)
-                return match
-            }
-            if (imagePath.endsWith(".mp4")) {
-                return `[Video. Click to view](/Attachments/${encodeURIComponent(p2)})`
-            }
-            return `![${p2}](/Attachments/${encodeURIComponent(p2)})`
-        })
+        //     // If the image file exists, return the correct public URL
+        //     if (!fs.existsSync(imagePath)) {
+        //         console.log(`image ${imagePath} doesnt exist`)
+        //         return match
+        //     }
+        //     if (imagePath.endsWith(".mp4")) {
+        //         return `[Video. Click to view](/Attachments/${encodeURIComponent(p2)})`
+        //     }
+        //     return `![${p2}](/Attachments/${encodeURIComponent(p2)})`
+        // })
+        const updatedContent = fileContent
+
 
         console.log(encodeURIComponent(updatedContent))
 

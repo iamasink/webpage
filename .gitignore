@@ -38,7 +38,7 @@ next-env.d.ts
 
 
 # other stuff
-public/Attachments/
+public/blog/Attachments/
 *- Copy/
 *-old/
 *-old
