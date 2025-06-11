@@ -16,7 +16,7 @@ export default function Home() {
 					<BouncyText>Theres not much here yet...</BouncyText>
 					<br />
 					{/*  translucent unless hovered */}
-					<small className="opacity-40 hover:opacity-100 transition-opacity duration-300">I guess you can visit my <Link className="textlink" href="/blog">blog</Link>..</small>
+					<small className="opacity-70">but you can visit my <Link className="textlink" href="/blog">blog</Link>..</small>
 					<br />
 					<br />
 					<img className="float-right" src="/place_him2.png" style={{ imageRendering: "pixelated" }}></img>
