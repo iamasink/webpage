@@ -52,6 +52,9 @@ adb install ".\ATV_SYTV_Bridge.apk"
 - or using a downloader app (eg *Downloader by AFTVnews*)
 and entering 
 ```
-kutt.it/atv_bridge_atv
+kutt.it/stn_bridge_atv
 ```
+
+
+
 
