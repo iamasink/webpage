@@ -1,14 +1,14 @@
 ---
 title: Troubleshooting my PC freezing
-description: windows sucks.
+description: 
 aliases: 
-tags:
-  - windows
+tags: []
 draft: false
 date: 2024-09-19
 ---
 This is pretty much just a log as I slowly lose my sanity to troubleshooting this crash..
 My memory sucks so it helps to have all the information here
+
 
 I updated to `2024-09 Cumulative Update for Windows 11 Version 23H2 for x64-based Systems (KB5043076)` on 2024-09-11 with no issues. Until..
 ##### 2024-09-19 ~17:30
@@ -173,3 +173,14 @@ running OCCT Power stbility test, i get lots of gpu errors
 00:01:05 3D Adaptive - 785808 error(s) found ( GPU #0 - NVIDIA GeForce RTX 2070 SUPER )
 00:01:06 3D Adaptive - 785808 error(s) found ( GPU #0 - NVIDIA GeForce RTX 2070 SUPER )
 ```
+idk
+
+
+##### 2025-06-05
+i finally bought a new power supply (CORSAIR RM850e 2025)
+which i now realise became £15 cheaper immediately after i bought it lol
+but anyway as of 2025-06-11, i haven't had any crashes like previously (touch wood)
+but of course my pc still has issues- 
+my monitors don't like waking up from sleep
+and sometimes windows just wont start and itll get stuck on the post screen
+¯\\\_(ツ)\_/¯
