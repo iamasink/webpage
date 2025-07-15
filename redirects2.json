@@ -2,276 +2,372 @@
     {
         "source": "/spotify",
         "destination": "https://open.spotify.com/user/ettjjmbfyjuz3o6hz1ejvu1d6",
+        "name": "Spotify",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/reddit",
         "destination": "https://www.reddit.com/user/Iamasink",
+        "name": "Reddit",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/youtube",
         "destination": "https://www.youtube.com/@iamasink",
+        "name": "YouTube",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/yt",
         "destination": "https://www.youtube.com/@iamasink",
+        "name": "YouTube",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/twitter/:slug*",
         "destination": "https://twitter.com/iamasink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/twitter2/:slug*",
-        "destination": "https://twitter.com/lilynekoi/:slug*",
+        "name": "Twitter",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/github/:slug*",
         "destination": "https://github.com/iamasink/:slug*",
+        "name": "GitHub",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/gh/:slug*",
         "destination": "https://github.com/iamasink/:slug*",
+        "name": "GitHub",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/git/:slug*",
         "destination": "https://github.com/iamasink/:slug*",
+        "name": "GitHub",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/steam/:slug*",
         "destination": "https://steamcommunity.com/profiles/76561198301681888/:slug*",
+        "name": "Steam",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/lastfm",
         "destination": "https://www.last.fm/user/Iamasink",
+        "name": "LastFM",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/discord",
         "destination": "https://discord.gg/xzZHfMw887",
-        "permanent": true
-    },
-    {
-        "source": "/ko-fi",
-        "destination": "https://ko-fi.com/iamasink",
+        "name": "Discord",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/kofi",
         "destination": "https://ko-fi.com/iamasink",
+        "name": "Ko-fi",
+        "listed": true,
+        "permanent": true
+    },
+    {
+        "source": "/kofi",
+        "destination": "https://ko-fi.com/iamasink",
+        "name": "Ko-fi",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/coffee",
         "destination": "https://ko-fi.com/iamasink",
+        "name": "Ko-fi",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/donate",
         "destination": "https://ko-fi.com/iamasink",
+        "name": "Ko-fi",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/gift",
         "destination": "https://ko-fi.com/iamasink",
+        "name": "Ko-fi",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/money",
         "destination": "https://ko-fi.com/iamasink",
+        "name": "Ko-fi",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/osu",
         "destination": "https://osu.ppy.sh/users/12841742",
+        "name": "osu!",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/tetrio",
         "destination": "https://ch.tetr.io/u/iamasink",
+        "name": "tetrio",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/tetris",
         "destination": "https://ch.tetr.io/u/iamasink",
+        "name": "tetrio",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/gdev",
         "destination": "https://g.dev/sink",
+        "name": "gdev",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/scoresaber",
         "destination": "https://scoresaber.com/u/76561198301681888",
+        "name": "ScoreSaber",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/ss",
         "destination": "https://scoresaber.com/u/76561198301681888",
+        "name": "ScoreSaber",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/beatsaver",
         "destination": "https://beatsaver.com/profile/4284452",
+        "name": "BeatSaver",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/bs",
         "destination": "https://beatsaver.com/profile/4284452",
+        "name": "BeatSaver",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/beatleader",
         "destination": "https://beatleader.com/u/76561198301681888",
+        "name": "BeatLeader",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/bl",
         "destination": "https://beatleader.com/u/76561198301681888",
-        "permanent": true
-    },
-    {
-        "source": "/twitch",
-        "destination": "https://twitch.tv/iamasink",
-        "permanent": true
-    },
-    {
-        "source": "/ttv",
-        "destination": "https://twitch.tv/iamasink",
-        "permanent": true
-    },
-    {
-        "source": "/mail",
-        "destination": "mailto:lily@yoink.org.uk",
-        "permanent": true
-    },
-    {
-        "source": "/email",
-        "destination": "mailto:lily@yoink.org.uk",
-        "permanent": true
-    },
-    {
-        "source": "/contact",
-        "destination": "mailto:lily@yoink.org.uk",
-        "permanent": true
-    },
-    {
-        "source": "/mailto",
-        "destination": "mailto:lily@yoink.org.uk",
-        "permanent": true
-    },
-    {
-        "source": "/bot",
-        "destination": "https://github.com/iamasink/lilysbot",
-        "permanent": true
-    },
-    {
-        "source": "/anilist/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/al/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/anime/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/mal/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/animelist/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/anime-list/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/anilist.co/:slug*",
-        "destination": "https://anilist.co/user/sink/:slug*",
-        "permanent": true
-    },
-    {
-        "source": "/archive.org",
-        "destination": "https://archive.org/details/@iamasink",
-        "permanent": true
-    },
-    {
-        "source": "/archive",
-        "destination": "https://archive.org/details/@iamasink",
+        "name": "BeatLeader",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/beastsaber",
         "destination": "https://bsaber.com/members/iamasink/",
+        "name": "BeastSaber",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/bsaber",
         "destination": "https://bsaber.com/members/iamasink/",
+        "name": "BeastSaber",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/twitch",
+        "destination": "https://twitch.tv/iamasink",
+        "name": "Twitch",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/ttv",
+        "destination": "https://twitch.tv/iamasink",
+        "name": "Twitch",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/mail",
+        "destination": "mailto:meow@iamas.ink",
+        "name": "mail",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/email",
+        "destination": "mailto:meow@iamas.ink",
+        "name": "mail",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/contact",
+        "destination": "mailto:meow@iamas.ink",
+        "name": "mail",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/mailto",
+        "destination": "mailto:meow@iamas.ink",
+        "name": "mail",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/bot",
+        "destination": "https://github.com/iamasink/lilysbot",
+        "name": "bot",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/anilist/:slug*",
+        "destination": "https://anilist.co/user/sink/:slug*",
+        "name": "anilist",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/al/:slug*",
+        "destination": "https://anilist.co/user/sink/:slug*",
+        "name": "anilist",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/anime/:slug*",
+        "destination": "https://anilist.co/user/sink/:slug*",
+        "name": "anilist",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/mal/:slug*",
+        "destination": "https://anilist.co/user/sink/:slug*",
+        "name": "anilist",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/archive.org",
+        "destination": "https://archive.org/details/@iamasink",
+        "name": "archive.org",
+        "listed": false,
+        "permanent": true
+    },
+    {
+        "source": "/archive",
+        "destination": "https://archive.org/details/@iamasink",
+        "name": "archive.org",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/faceit",
         "destination": "https://www.faceit.com/en/players/Iamasink",
+        "name": "Faceit",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/itch.io/:slug*",
         "destination": "https://iamasink.itch.io/:slug*",
+        "name": "itch.io",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/itch/:slug*",
         "destination": "https://iamasink.itch.io/:slug*",
+        "name": "itch.io",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/itchio/:slug*",
         "destination": "https://iamasink.itch.io/:slug*",
+        "name": "itch.io",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/tradelink",
         "destination": "https://steamcommunity.com/tradeoffer/new/?partner=341416160&token=raP39J70",
+        "name": "tradelink",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/trade",
         "destination": "https://steamcommunity.com/tradeoffer/new/?partner=341416160&token=raP39J70",
+        "name": "tradelink",
+        "listed": false,
         "permanent": true
     },
     {
         "source": "/monkeytype",
         "destination": "https://monkeytype.com/profile/Iamasink",
+        "name": "Monkeytype",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/bluesky/:slug*",
         "destination": "https://bsky.app/profile/iamas.ink/:slug*",
+        "name": "Bluesky",
+        "listed": true,
         "permanent": true
     },
     {
         "source": "/bsky/:slug*",
         "destination": "https://bsky.app/profile/iamas.ink/:slug*",
+        "name": "Bluesky",
+        "listed": true,
+        "permanent": true
+    },
+    {
+        "source": "/tiktok/:slug*",
+        "destination": "https://www.tiktok.com/@iamasink/:slug*",
+        "name": "tiktok",
+        "listed": true,
+        "permanent": true
+    },
+    {
+        "source": "/tt/:slug*",
+        "destination": "https://www.tiktok.com/@iamasink/:slug*",
+        "name": "tiktok",
+        "listed": true,
         "permanent": true
     }
 ]
