@@ -62,8 +62,7 @@ export default function Home() {
 		<div>
 			<Script src="./oneko.js"></Script>
 			<main className="flex min-h-screen flex-col items-center pt-24">
-				<div className="grid-cols-3">
-					<div className=""></div>
+					<div className="">
 
 					<div className="items-top flex">
 						<Pfp></Pfp>
@@ -98,7 +97,7 @@ export default function Home() {
 						<br />
 						<span>heres a button! feel free to link to me :3</span>
 						<br />
-						<img className="float-right" src="/terriermon-blink.gif" alt="terriermon blinking gif" title="moumantai" width={150} height={0}></img>
+						<img className="float-right rounded-3xl hover:rounded-md transition-all" src="/terriermon-blink.gif" alt="terriermon blinking gif" title="moumantai" width={150} height={0}></img>
 						<Copyable message="Click to copy source!" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>
@@ -107,7 +106,6 @@ export default function Home() {
 						<br />
 						<span>some cool sites</span>
 						<div className="flex">
-							{/* <Button8831 link="https://dimden.dev/" alt="dimden.dev" src="https://dimden.dev/services/images/88x31.gif" ></Button8831> */}
 							<Button8831 link="https://duck.fyi" alt="duck.fyi" src="https://duck.fyi/buttons/88x31.gif"></Button8831>
 							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" ></Button8831>
 						</div>

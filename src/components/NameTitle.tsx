@@ -22,3 +22,4 @@ const NameTitle: React.FC = ({ }) => {
 }
 
 export default NameTitle
+

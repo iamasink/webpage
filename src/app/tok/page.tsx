@@ -16,7 +16,26 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
 	title: 'iamasink - home',
-	description: "sinks's homepage",
+	description: "sink's homepage",
+	openGraph: {
+		title: 'iamasink - home',
+		description: "sink's homepage",
+		url: 'https://iamas.ink/',
+		images: [
+			{
+				url: 'https://iamas.ink/pfp.png',
+				width: 100,
+				height: 100,
+			},
+		],
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary',
+		title: 'iamasink - home',
+		description: "sink's homepage",
+		images: ['https://iamas.ink/pfp.png'],
+	},
 	referrer: 'origin-when-cross-origin',
 	keywords: ['iamasink', 'links', 'homepage'],
 	authors: [{ name: "Lily" }],
@@ -50,7 +69,7 @@ export default function Home() {
 							<NameTitle></NameTitle>
 							<br />
 							<br />
-							<div className="">
+							<div className="" aria-label="Discord @iamasink">
 								Discord @
 								<CopyableText text="iamasink"></CopyableText>
 							</div>
@@ -67,7 +86,7 @@ export default function Home() {
 
 					{/* <SlateBackground> */}
 
-					<div className="mx-7 py-3 pt-5">
+					<div className="mx-7 pt-5">
 						<span>lipu ni li lili..</span>
 						<br />
 						<span>o lukin e lipu ni: <a title="tawa lipu snailhands.neocities.org" className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">lipu pi jan pona</a></span>
@@ -77,8 +96,7 @@ export default function Home() {
 						<br />
 						<span>nena a! sina ken jasima lon lipu sina!</span>
 						<br />
-						<img className="float-right" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
-						{/* <div className="overflow-scroll w-[88px] h-[31px]"> */}
+						<img className="float-right rounded-3xl hover:rounded-md transition-all" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
 						<Copyable message="o pali la sama tawa lipu sina" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>

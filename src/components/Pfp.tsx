@@ -30,11 +30,9 @@ const Pfp: React.FC<PfpProps> = ({ size = 200, tooltip = true }) => {
 					width={size}
 					height={size}
 					style={{
-						borderRadius: "15%",
 						border: "3px solid #ffffff",
-
 					}}
-					className="m-4"
+					className="m-4 rounded-3xl group-hover:rounded-xl transition-all"
 				// sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				></Image>
 				{tooltip && ttooltip}
