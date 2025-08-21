@@ -43,8 +43,7 @@ export default function Home() {
                     <Link href="https://kittenburst.com" className="textlink">
                         <img className="self-center" src="/assets/images/kb/HapiDetermined.png" width={400} height={400}></img>
                     </Link>
-                    <p className="mt-1">check out this cat</p>
-                    <p>:3</p>
+                    <p className="mt-1">check out this cat!!!!!!!!!</p>
                     <br />
                     <Link className="textlink" href="/elsewhere"> go back</Link>
                 </div>

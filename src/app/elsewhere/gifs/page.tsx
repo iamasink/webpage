@@ -57,7 +57,7 @@ export default function Home() {
                         </div> */}
 
 
-                    <h3>gifs from <a className="textlink" href="https://holohammer.com/mindwave/">mindwave</a> :3</h3>
+                    <h3>gifs from <a className="textlink" href="https://holohammer.com/mindwave/">mindwave</a> &lt;3</h3>
                     <img className="m-1" src="/assets/images/mindwave/spr_popup_s1.gif" width={138 * 2} height={101 * 2} style={{ imageRendering: "pixelated" }}></img>
                     <img className="m-1" src="/assets/images/mindwave/spr_popup_s2.gif" width={92 * 2} height={102 * 2} style={{ imageRendering: "pixelated" }}></img>
                     <img className="m-1" src="/assets/images/mindwave/spr_popup_s3.gif" width={92 * 2} height={50 * 2} style={{ imageRendering: "pixelated" }}></img>

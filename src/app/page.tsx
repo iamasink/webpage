@@ -70,6 +70,7 @@ export default function Home() {
 							<NameTitle></NameTitle>
 							<br />
 							<br />
+							<br />
 							<div className="" aria-label="Discord @iamasink">
 								Discord @
 								<CopyableText text="iamasink"></CopyableText>
@@ -88,11 +89,7 @@ export default function Home() {
 					{/* <SlateBackground> */}
 
 					<div className="mx-7 pt-5">
-						<span>I&apos;m not very interesting so theres not much here..</span>
-						<br />
-						<span>why don&apos;t you check out <a title="link to snailhands.neocities.org" className="textlink" href="https://snailhands.neocities.org/">oomf</a></span>
-						<br />
-						<span>i will update this page one day.....</span>
+						<span>Hi..</span>
 						<br />
 						<br />
 						<span>heres a button! feel free to link to me :3</span>
@@ -105,10 +102,13 @@ export default function Home() {
 						<br />
 						<br />
 						<span>some cool sites</span>
+
 						<div className="flex">
 							<Button8831 link="https://duck.fyi" alt="duck.fyi" src="https://duck.fyi/buttons/88x31.gif"></Button8831>
 							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" ></Button8831>
 						</div>
+						<span>check out <a title="link to snailhands.neocities.org" className="textlink" href="https://snailhands.neocities.org/">oomf!!!</a></span>
+						<br />
 						<br />
 
 						<span>:3</span>
