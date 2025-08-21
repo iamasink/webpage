@@ -4,6 +4,7 @@ import Tooltip from "./Tooltip"
 interface PfpProps {
 	size?: number
 	tooltip?: boolean
+	src?: string
 }
 
 const hovermsg = "pfp art by shioneko114"
@@ -16,7 +17,7 @@ const ttooltip = (<div className="">
 </div>)
 
 
-const Pfp: React.FC<PfpProps> = ({ size = 200, tooltip = true }) => {
+const Pfp: React.FC<PfpProps> = ({ size = 200, tooltip = true, src="/pfp.png" }) => {
 	//const alt="pfp art by shioneko114 https://twitter.com/shioneko114/status/1700896958682959929"
 	//  https://twitter.com/shioneko114/status/1695414505151635514
 
@@ -24,7 +25,7 @@ const Pfp: React.FC<PfpProps> = ({ size = 200, tooltip = true }) => {
 		<div className="place-content-center ">
 			<div className="group relative inline-block">
 				<Image
-					src="/pfp.png"
+					src={src}
 					alt="profile picture"
 					draggable={false}
 					width={size}
