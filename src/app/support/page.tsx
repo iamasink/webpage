@@ -6,8 +6,33 @@ import Header from "@/components/Header"
 import BouncyText from "@/components/BouncyText"
 import CopyableText from "@/components/CopyableText"
 import Copyable from "@/components/Copyable"
+import { Metadata } from "next"
 
-
+export const metadata: Metadata = {
+	title: 'support iamasink',
+	description: "links to support iamasink",
+	openGraph: {
+		title: 'support iamasink',
+		description: "links to support iamasink",
+		url: 'https://iamas.ink/support',
+		images: [
+			{
+				url: 'https://iamas.ink/pfp.png',
+				width: 100,
+				height: 100,
+			},
+		],
+		type: 'website',
+	},
+	referrer: 'origin-when-cross-origin',
+	keywords: ['iamasink', 'links', 'homepage'],
+	creator: 'iamasink',
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+}
 
 export default function Home() {
 	return (
@@ -43,6 +68,11 @@ export default function Home() {
 							❤️ Sponsor me on GitHub Sponsors
 						</button>
 					</a>
+
+					<hr/>
+					<br/>
+					<h1>other ways to donate</h1>
+					<Copyable text="0x58e789D03911a44A0Eb7cA438bee9239Cfa4eA31"><span className="text-gray-400 inline-flex">ethereum: <img src="copy.svg" className="ml-3" style={{filter: "invert(1)"}}></img></span><span className="text-gray-500">0x58e789D03911a44A0Eb7cA438bee9239Cfa4eA31</span></Copyable>
 				</div>
 			</main>
 		</div>
