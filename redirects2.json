@@ -98,27 +98,6 @@
         "permanent": true
     },
     {
-        "source": "/donate",
-        "destination": "https://ko-fi.com/iamasink",
-        "name": "Ko-fi",
-        "listed": true,
-        "permanent": true
-    },
-    {
-        "source": "/gift",
-        "destination": "https://ko-fi.com/iamasink",
-        "name": "Ko-fi",
-        "listed": true,
-        "permanent": true
-    },
-    {
-        "source": "/money",
-        "destination": "https://ko-fi.com/iamasink",
-        "name": "Ko-fi",
-        "listed": true,
-        "permanent": true
-    },
-    {
         "source": "/osu",
         "destination": "https://osu.ppy.sh/users/12841742",
         "name": "osu!",
@@ -368,6 +347,21 @@
         "destination": "https://www.tiktok.com/@iamasink/:slug*",
         "name": "tiktok",
         "listed": true,
+        "permanent": true
+    },
+    {
+        "source": "/github-sponsors/:slug*",
+        "destination": "https://github.com/sponsors/iamasink/:slug*",
+        "permanent": true
+    },
+    {
+        "source": "/supportpage/:slug*",
+        "destination": "https://iamas.ink/support/:slug*",
+        "permanent": true
+    },
+    {
+        "source": "/donate/:slug*",
+        "destination": "https://iamas.ink/support/:slug*",
         "permanent": true
     }
 ]
