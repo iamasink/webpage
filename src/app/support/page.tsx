@@ -40,7 +40,9 @@ export default function Home() {
 			<title>support me</title>
 			<main className="flex min-h-screen flex-col items-center pt-24">
 				<div className="mx-7 py-3 pt-5 centered-main">
-					<BouncyText>support me</BouncyText>
+					<Link className="textlink text-sm" href="/"> go home</Link>
+					<br/>
+					<span className="text-4xl">support me</span>
 					<br />
 					<br />
 					<a
