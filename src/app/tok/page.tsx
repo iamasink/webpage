@@ -67,7 +67,8 @@ export default function Home() {
 						<Pfp></Pfp>
 						<div className="">
 							<NameTitle></NameTitle>
-							<p>jan Lilije / ilo Sinku</p>
+							<br />
+							<br />
 							<br />
 							<div className="" aria-label="Discord @iamasink">
 								Discord @
@@ -87,40 +88,15 @@ export default function Home() {
 					{/* <SlateBackground> */}
 
 					<div className="mx-7 pt-5">
-						<span>tokii..</span>
+						<span>tokii</span>
 						<br />
 						<br />
-						<span>nena a! o pana tawa lipu sina!</span>
-						<br />
-						<img className="float-right rounded-3xl hover:rounded-md transition-all" src="/terriermon-blink.gif" alt="soweli Telilimon pi musi Sikimon (Digimon)" title="ale li pona" width={150} height={0}></img>
+						<div style={{alignItems:"center"}}>
+						<span>nena a!</span><br/>
 						<Copyable message="o pali la sama tawa lipu sina" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>
-						{/* </div> */}
-						<br />
-						<br />
-						<span>lipu pona</span>
-
-						<div className="flex">
-							<Button8831 link="https://duck.fyi" alt="duck.fyi" src="https://duck.fyi/buttons/88x31.gif"></Button8831>
-							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" ></Button8831>
 						</div>
-						<span>o lukin e lipu ni: <a title="tawa lipu snailhands.neocities.org" className="underline text-pink-500 transition-all hover:bg-pink-500 hover:text-pink-100" href="https://snailhands.neocities.org/">lipu pi jan pona</a></span>
-						<br />
-						<br />
-
-						<span>o suwi</span>
-						<br />
-						<div className="flex">
-							<Link href="/" ><img alt="sitelen pona glyphs reading: 'o toki ike'" src="/assets/images/o-toki-ike.png"></img></Link>
-						</div>
-						<br />
-						<span>o lukin e lipu <a title="bsky.iamas.ink" href="https://bsky.app/profile/iamas.ink" className="textlink">Bluesky</a></span>
-						<br />
-						<span>e lipu <a className="textlink" href="https://github.com/iamasink">Kitupu</a></span>
-						<br />
-						<span><span>e lipu </span><a className="textlink" href="https://www.youtube.com/@iamasink">Jutu</a></span>
-						<br />
 						<br />
 						<br />
 						<span>tawa <Link className="textlink" href="/elsewhere"><BouncyText hoverOnly={true}>lipu ante~</BouncyText></Link></span>

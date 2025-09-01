@@ -13,11 +13,7 @@ export default function Home() {
 			<title>elsewhere..</title>
 			<main className="flex min-h-screen flex-col items-center pt-24">
 				<div className="mx-7 py-3 pt-5 centered-main">
-					<BouncyText>Theres not much here yet...</BouncyText>
-					<br />
-					{/*  translucent unless hovered */}
-					<small className="opacity-70">but you can visit my <Link className="textlink" href="/blog">blog</Link>..</small>
-					<br />
+					<BouncyText>Theres not much here...</BouncyText>
 					<br />
 					<img className="float-right" src="/place_him2.png" style={{ imageRendering: "pixelated" }}></img>
 					<br />

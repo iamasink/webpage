@@ -89,40 +89,15 @@ export default function Home() {
 					{/* <SlateBackground> */}
 
 					<div className="mx-7 pt-5">
-						<span>Hi..</span>
+						<span>hi</span>
 						<br />
 						<br />
-						<span>heres a button! feel free to link to me :3</span>
-						<br />
-						<img className="float-right rounded-3xl hover:rounded-md transition-all" src="/terriermon-blink.gif" alt="terriermon blinking gif" title="moumantai" width={150} height={0}></img>
+						<div style={{alignItems:"center"}}>
+						<span>button thing</span><br/>
 						<Copyable message="Click to copy source!" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
 						</Copyable>
-						{/* </div> */}
-						<br />
-						<br />
-						<span>some cool sites</span>
-
-						<div className="flex">
-							<Button8831 link="https://duck.fyi" alt="duck.fyi" src="https://duck.fyi/buttons/88x31.gif"></Button8831>
-							<Button8831 link="https://eightyeightthirty.one/" alt="eightyeightthirtyone" src="/assets/buttons/88x31.png" ></Button8831>
 						</div>
-						<span>check out <a title="link to snailhands.neocities.org" className="textlink" href="https://snailhands.neocities.org/">oomf!!!</a></span>
-						<br />
-						<br />
-
-						<span>:3</span>
-						<br />
-						<div className="flex">
-							<Link href="/tok" ><img alt="sitelen pona glyphs reading: 'o toki pona'" src="/assets/images/o-toki-pona.png"></img></Link>
-						</div>
-						<br />
-						<span>follow me on <a title="bsky.iamas.ink" target="_blank" rel="noopener noreferrer" href="https://bsky.app/profile/iamas.ink" className="textlink">bluesky</a> i guess</span>
-						<br />
-						<span>my terrible code on <a className="textlink" target="_blank" rel="noopener noreferrer" href="https://github.com/iamasink">github</a></span>
-						<br />
-						<span><span title="and remember to like subscribe and hit the bell">subscribe </span><a className="textlink" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@iamasink">youtube</a></span>
-						<br />
 						<br />
 						<br />
 						<span>go <Link className="textlink" href="/elsewhere"><BouncyText hoverOnly={true}>elsewhere~</BouncyText></Link></span>
