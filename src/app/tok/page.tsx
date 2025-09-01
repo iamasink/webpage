@@ -91,7 +91,7 @@ export default function Home() {
 						<span>tokii</span>
 						<br />
 						<br />
-						<div style={{alignItems:"center"}}>
+						<div style={{display:"flex" , flexDirection:"column", alignItems:"center"}}>
 						<span>nena a!</span><br/>
 						<Copyable message="o pali la sama tawa lipu sina" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>

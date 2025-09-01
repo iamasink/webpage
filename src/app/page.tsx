@@ -92,7 +92,7 @@ export default function Home() {
 						<span>hi</span>
 						<br />
 						<br />
-						<div style={{alignItems:"center"}}>
+						<div style={{display:"flex" , flexDirection:"column", alignItems:"center"}}>
 						<span>button thing</span><br/>
 						<Copyable message="Click to copy source!" text='<a href="https://iamas.ink/"><img src="https://iamas.ink/assets/buttons/iamasink.gif"/></a>'>
 							<img src="/assets/buttons/iamasink.gif" alt="iamasink's button" width={88} height={31} style={{ imageRendering: "pixelated" }}></img>
