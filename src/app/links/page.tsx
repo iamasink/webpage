@@ -40,7 +40,7 @@ export default function Home() {
           <ul className="space-y-2">
             {listedLinks.map(({ source, destination, name }) => (
               <li key={source}>
-                <Link href={formatURL(destination)} className="textlink">
+                <Link href={`https://${formatURL(destination)}`} className="textlink">
                   {name || destination}
                 </Link>
               </li>
