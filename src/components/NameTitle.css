@@ -1,0 +1,14 @@
+.name span {
+	margin-left: 0;
+	transition: margin-left 0.2s ease-in-out;
+	/* so transforms don’t break bg-clip */
+}
+
+.name:hover span:not(:first-child) {
+	margin-left: 0.5rem;
+}
+
+.namecontainer {
+	overflow-x: visible;
+	max-width: 12rem;
+}
